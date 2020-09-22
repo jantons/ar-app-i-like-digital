@@ -1,0 +1,7 @@
+We provide the following assets that can be used with most of the fur solutions based on shells:
+* Wolf_Grow - skeletal mesh used for shells
+* Wolf_FurGuides - fur splines that guide the shell growth/length
+* Wolf_FurTip - texture for the tip of the fur strands/shells
+* Wolf_FurMasks
+		* Red channel - interpolate between different fur strand thickness (e.g. thin on legs, head, thick on top of the head), you need to modify your shaders to use this mask
+		* Green channel - masks out the parts without fur

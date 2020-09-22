@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: cd66a324606275c4bb73fb891df076ac
+timeCreated: 1499695992
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: RigChest
+    100004: RigHead
+    100006: RigJaw
+    100008: RigLBLeg1
+    100010: RigLBLeg2
+    100012: RigLBLegAnkle
+    100014: RigLBLegDigit11
+    100016: RigLBLegDigit12
+    100018: RigLEar1
+    100020: RigLEyelid
+    100022: RigLFLeg1
+    100024: RigLFLeg2
+    100026: RigLFLegAnkle
+    100028: RigLFLegCollarbone
+    100030: RigLFLegDigit11
+    100032: RigLFLegDigit12
+    100034: RigNeck1
+    100036: RigNeck2
+    100038: RigPelvis
+    100040: RigRBLeg1
+    100042: RigRBLeg2
+    100044: RigRBLegAnkle
+    100046: RigRBLegDigit11
+    100048: RigRBLegDigit12
+    100050: RigREar1
+    100052: RigREyelid
+    100054: RigRFLeg1
+    100056: RigRFLeg2
+    100058: RigRFLegAnkle
+    100060: RigRFLegCollarbone
+    100062: RigRFLegDigit11
+    100064: RigRFLegDigit12
+    100066: RigRoot
+    100068: RigSpine1
+    100070: RigSpine2
+    100072: RigTail1
+    100074: RigTail2
+    100076: RigTail3
+    100078: RigTail4
+    100080: RigTongue1
+    100082: RigTongue2
+    100084: RigTongue3
+    400000: //RootNode
+    400002: RigChest
+    400004: RigHead
+    400006: RigJaw
+    400008: RigLBLeg1
+    400010: RigLBLeg2
+    400012: RigLBLegAnkle
+    400014: RigLBLegDigit11
+    400016: RigLBLegDigit12
+    400018: RigLEar1
+    400020: RigLEyelid
+    400022: RigLFLeg1
+    400024: RigLFLeg2
+    400026: RigLFLegAnkle
+    400028: RigLFLegCollarbone
+    400030: RigLFLegDigit11
+    400032: RigLFLegDigit12
+    400034: RigNeck1
+    400036: RigNeck2
+    400038: RigPelvis
+    400040: RigRBLeg1
+    400042: RigRBLeg2
+    400044: RigRBLegAnkle
+    400046: RigRBLegDigit11
+    400048: RigRBLegDigit12
+    400050: RigREar1
+    400052: RigREyelid
+    400054: RigRFLeg1
+    400056: RigRFLeg2
+    400058: RigRFLegAnkle
+    400060: RigRFLegCollarbone
+    400062: RigRFLegDigit11
+    400064: RigRFLegDigit12
+    400066: RigRoot
+    400068: RigSpine1
+    400070: RigSpine2
+    400072: RigTail1
+    400074: RigTail2
+    400076: RigTail3
+    400078: RigTail4
+    400080: RigTongue1
+    400082: RigTongue2
+    400084: RigTongue3
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: RigRoot
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
