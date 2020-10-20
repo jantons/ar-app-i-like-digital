@@ -8,10 +8,11 @@ namespace UnityEngine.XR.ARFoundation.Samples
 {
     public class InputSystem_PlaceOnPlane : MonoBehaviour
     {
-
+        ARManager arManager;
         [SerializeField]
         [Tooltip("Instantiates this prefab on a plane at the touch location.")]
         GameObject m_PlacedPrefab;
+
 
         /// <summary>
         /// The prefab to instantiate on touch.
@@ -30,6 +31,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
         void Awake()
         {
             m_RaycastManager = GetComponent<ARRaycastManager>();
+            arManager = GameObject.Find("ARManager").GetComponent<ARManager>();
         }
 
         public void AddObject(InputAction.CallbackContext context)
@@ -43,11 +45,18 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
                 if (spawnedObject == null)
                 {
-                    spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
+                    //spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
+                    spawnedObject = Instantiate(arManager.GetARModel(), hitPose.position, hitPose.rotation);
+                    arManager.OnScreenModel = spawnedObject;
+                    arManager.TransformAnchor.position = hitPose.position;
+                    arManager.TransformAnchor.rotation = hitPose.rotation;
+
                 }
                 else
                 {
                     spawnedObject.transform.position = hitPose.position;
+                    arManager.TransformAnchor.position = hitPose.position;
+                    arManager.TransformAnchor.rotation = hitPose.rotation;
                 }
             }
         }
