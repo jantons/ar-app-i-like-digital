@@ -1,0 +1,188 @@
+fileFormatVersion: 2
+guid: 884922fb19106fc4b81d11a6ef052f1b
+labels:
+- Wolf
+- Stylized
+- Realistic
+- LODs
+- Character
+- Animations
+- Animated
+- Animal
+- Bone
+- RawBone
+timeCreated: 1453843892
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: RigChest
+    100002: RigHead
+    100004: RigJaw
+    100006: RigLBLeg1
+    100008: RigLBLeg2
+    100010: RigLBLegAnkle
+    100012: RigLBLegDigit11
+    100014: RigLBLegDigit12
+    100016: RigLEar1
+    100018: RigLEyelid
+    100020: RigLFLeg1
+    100022: RigLFLeg2
+    100024: RigLFLegAnkle
+    100026: RigLFLegCollarbone
+    100028: RigLFLegDigit11
+    100030: RigLFLegDigit12
+    100032: RigNeck1
+    100034: RigNeck2
+    100036: RigPelvis
+    100038: RigRBLeg1
+    100040: RigRBLeg2
+    100042: RigRBLegAnkle
+    100044: RigRBLegDigit11
+    100046: RigRBLegDigit12
+    100048: RigREar1
+    100050: RigREyelid
+    100052: RigRFLeg1
+    100054: RigRFLeg2
+    100056: RigRFLegAnkle
+    100058: RigRFLegCollarbone
+    100060: RigRFLegDigit11
+    100062: RigRFLegDigit12
+    100064: RigRoot
+    100066: RigSpine1
+    100068: RigSpine2
+    100070: RigTail1
+    100072: RigTail2
+    100074: RigTail3
+    100076: RigTail4
+    100078: RigTongue1
+    100080: RigTongue2
+    100082: RigTongue3
+    100084: //RootNode
+    100086: Wolf
+    100088: Wolf 1
+    100090: Wolf_LOD1
+    100092: Wolf_LOD2
+    100094: Wolf_LOD3
+    400000: RigChest
+    400002: RigHead
+    400004: RigJaw
+    400006: RigLBLeg1
+    400008: RigLBLeg2
+    400010: RigLBLegAnkle
+    400012: RigLBLegDigit11
+    400014: RigLBLegDigit12
+    400016: RigLEar1
+    400018: RigLEyelid
+    400020: RigLFLeg1
+    400022: RigLFLeg2
+    400024: RigLFLegAnkle
+    400026: RigLFLegCollarbone
+    400028: RigLFLegDigit11
+    400030: RigLFLegDigit12
+    400032: RigNeck1
+    400034: RigNeck2
+    400036: RigPelvis
+    400038: RigRBLeg1
+    400040: RigRBLeg2
+    400042: RigRBLegAnkle
+    400044: RigRBLegDigit11
+    400046: RigRBLegDigit12
+    400048: RigREar1
+    400050: RigREyelid
+    400052: RigRFLeg1
+    400054: RigRFLeg2
+    400056: RigRFLegAnkle
+    400058: RigRFLegCollarbone
+    400060: RigRFLegDigit11
+    400062: RigRFLegDigit12
+    400064: RigRoot
+    400066: RigSpine1
+    400068: RigSpine2
+    400070: RigTail1
+    400072: RigTail2
+    400074: RigTail3
+    400076: RigTail4
+    400078: RigTongue1
+    400080: RigTongue2
+    400082: RigTongue3
+    400084: Wolf
+    400086: //RootNode
+    400088: Wolf 1
+    400090: Wolf_LOD1
+    400092: Wolf_LOD2
+    400094: Wolf_LOD3
+    4300000: Wolf
+    4300002: Wolf_LOD1
+    4300004: Wolf_LOD2
+    4300006: Wolf_LOD3
+    9500000: //RootNode
+    13700000: Wolf 1
+    13700002: Wolf_LOD1
+    13700004: Wolf_LOD2
+    13700006: Wolf_LOD3
+    13700008: Wolf
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: RigRoot
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
