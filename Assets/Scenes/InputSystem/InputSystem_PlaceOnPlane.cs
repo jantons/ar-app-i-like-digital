@@ -47,7 +47,8 @@ namespace UnityEngine.XR.ARFoundation.Samples
                 {
                     //spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
                     spawnedObject = Instantiate(arManager.GetARModel(), hitPose.position, hitPose.rotation);
-                    arManager.OnScreenModel = spawnedObject;
+
+                    arManager.invokeOnScreenModel(spawnedObject);
                     arManager.TransformAnchor.position = hitPose.position;
                     arManager.TransformAnchor.rotation = hitPose.rotation;
 

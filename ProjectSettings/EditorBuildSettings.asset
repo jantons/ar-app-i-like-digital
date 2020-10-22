@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ARDemo/Demo_InputSystem.unity
-    guid: 9ecd303abdb464cc28e5281c36a7d3b9
+    path: Assets/ARDemo/Demo_WolfSimple.unity
+    guid: c4371369a2297436390b10f46b3c851a
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: f8ce26fe3bc69499b9be4b2378e97a94,
       type: 2}

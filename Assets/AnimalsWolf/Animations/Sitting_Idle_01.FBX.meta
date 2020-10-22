@@ -272,7 +272,7 @@ ModelImporter:
     second: //RootNode
   - first:
       74: 7400000
-    second: Stand_Idle_01
+    second: Sitting_Idle_01
   - first:
       95: 9500000
     second: //RootNode
@@ -305,7 +305,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Stand_Idle_01
+      name: Sitting_Idle_01
       takeName: Take 001
       internalID: 0
       firstFrame: 0
@@ -318,9 +318,9 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
