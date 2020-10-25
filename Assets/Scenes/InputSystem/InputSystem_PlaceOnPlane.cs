@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.InputSystem;
+using ARExample;
 
 namespace UnityEngine.XR.ARFoundation.Samples
 {
@@ -39,6 +40,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
                 {
                     //spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
                     spawnedObject = Instantiate(arManager.GetARModel(), hitPose.position, hitPose.rotation);
+                    spawnedObject.transform.rotation = snapObject.rotation;
                     arManager.invokeOnScreenModel(spawnedObject);
 
                 }
@@ -47,10 +49,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
                     spawnedObject.transform.position = hitPose.position;
                     
                 }
-                if (isSnap)
-                {
-                    spawnedObject.transform.rotation = snapObject.rotation;
-                }
+                
 
             }
         }
