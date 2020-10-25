@@ -25,11 +25,11 @@ public class ModelController : MonoBehaviour
     }
     void invokeOnDanger()
     { 
-        if (!myAnimator.GetBool("isAttack") && !this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack_Run_01_AttackF")) //Not attacking
+        if (!myAnimator.GetBool("isAttack") && !this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack_StandAngry_01_Low")) //Not attacking
         {
             Debug.Log("In Danger");
             myAnimator.SetBool("isAttack", true); // Set Attacking
-            myAnimator.Play("Attack_Run_01_AttackF", -1,0);
+            myAnimator.Play("Attack_StandAngry_01_Low", -1,0);
             
             StartCoroutine( resetFlag(getRandomDelay(getCurrentAnimLength()), "isAttack"));
         }

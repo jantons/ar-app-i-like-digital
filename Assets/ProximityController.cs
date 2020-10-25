@@ -7,7 +7,7 @@ public class ProximityController : MonoBehaviour
     Transform playerTrans;
     public bool proximitySensor;
 
-    [SerializeField] float safeZoneLimit = 4f;
+    [SerializeField] float safeZoneLimit = 1f;
 
     bool isNotified = false;
 
@@ -32,6 +32,7 @@ public class ProximityController : MonoBehaviour
             else
             {
                 // Safe Zone
+                SessionEvents.instance.SafeZoneTriggere();
             }
         }
 

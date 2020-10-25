@@ -761,7 +761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proximitySensor: 0
-  safeZoneLimit: 3
+  safeZoneLimit: 1
 --- !u!1 &6657886114471451425
 GameObject:
   m_ObjectHideFlags: 0
