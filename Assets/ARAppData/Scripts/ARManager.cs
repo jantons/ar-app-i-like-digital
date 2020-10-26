@@ -66,7 +66,7 @@ namespace ARExample
         {
             //Invoke Model proximity and initialize model
             onScreenModel = model;
-            onScreenModel.GetComponent<ProximityController>().setProximitySensor(true, playerObj);
+            onScreenModel.GetComponent<ProximityController>().EnableProximity(3f,playerObj.transform);
         }
         public void changeModel(int modelLevel)
         {
@@ -77,6 +77,19 @@ namespace ARExample
         {
             onScreenModel.GetComponent<Animator>().Play(newState);
         }
+
+        public void InstantiateModel(Transform spawnReference)
+        {
+            onScreenModel = Instantiate(GetARModel(), spawnReference.position, Quaternion.identity);
+
+            Vector3 originalRotation = onScreenModel.transform.eulerAngles;
+            onScreenModel.transform.LookAt(Camera.main.transform.position, -Vector3.up);
+            Vector3 newRotation = onScreenModel.transform.eulerAngles;
+            onScreenModel.transform.eulerAngles = new Vector3(originalRotation.x, newRotation.y, originalRotation.z);
+
+            onScreenModel.GetComponent<ProximityController>().EnableProximity(3f, playerObj.transform);
+
+        }
         #endregion
 
 
@@ -85,7 +98,8 @@ namespace ARExample
 #if UNITY_EDITOR
         private void Start()
         {
-            onScreenModel.GetComponent<ProximityController>().setProximitySensor(true, playerObj);
+            //onScreenModel.GetComponent<ProximityController>().setProximitySensor(true, playerObj);
+            onScreenModel.GetComponent<ProximityController>().EnableProximity(3f, playerObj.transform);
         }
 
 
