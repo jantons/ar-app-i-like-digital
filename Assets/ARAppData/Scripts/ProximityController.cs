@@ -6,20 +6,13 @@ namespace ARExample
     public class ProximityController : MonoBehaviour
     {
         Transform playerTrans;
+        public Transform GetPlayerTrans { get => playerTrans; }
         public bool proximitySensor;
 
         [SerializeField] float safeZoneLimit = 1f;
         [SerializeField] float startfollowLimit = 4f;
 
         bool isNotified = false;
-
-        public void setProximitySensor(bool state, GameObject Player)
-        {
-            Debug.Log("Hi Me" + state);
-            playerTrans = Player.GetComponent<Transform>();
-            proximitySensor = state;
-        }
-
 
         // Update is called once per frame
         void FixedUpdate()
@@ -47,10 +40,24 @@ namespace ARExample
                         SessionEvents.instance.UnFollowTriggered();
                     }
                 }
-
                 
             }
 
+        }
+        public void EnableProximity(float delay, Transform refPlayerTrans)
+        {
+            StartCoroutine(DelayEnableProximity(delay,refPlayerTrans));
+        }
+        public void setProximitySensor(bool state, GameObject Player)
+        {
+            playerTrans = Player.GetComponent<Transform>();
+            proximitySensor = state;
+        }
+        IEnumerator DelayEnableProximity(float delay, Transform refPlayerTrans)
+        {
+            yield return new WaitForSeconds(delay);
+            proximitySensor = true;
+            playerTrans = refPlayerTrans;
         }
     }
 }
