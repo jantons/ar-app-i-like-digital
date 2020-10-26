@@ -9,12 +9,8 @@ namespace UnityEngine.XR.ARFoundation.Samples
 {
     public class InputSystem_PlaceOnPlane : MonoBehaviour
     {
-        [SerializeField] bool isDragOn;
-        [SerializeField] bool isSnap;
-        [SerializeField] Transform snapObject;
         ARManager arManager;
-        [SerializeField]
-
+        [SerializeField] GameObject refObject;
 
         /// <summary>
         /// The object instantiated as a result of a successful raycast intersection with a plane.
@@ -39,18 +35,12 @@ namespace UnityEngine.XR.ARFoundation.Samples
                 if (spawnedObject == null)
                 {
                     //spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
-                    spawnedObject = Instantiate(arManager.GetARModel(), hitPose.position, hitPose.rotation);
-                    spawnedObject.transform.rotation = snapObject.rotation;
-                    arManager.invokeOnScreenModel(spawnedObject);
+                   // spawnedObject = Instantiate(arManager.GetARModel(), hitPose.position, hitPose.rotation);
+                    spawnedObject = Instantiate(refObject, hitPose.position, hitPose.rotation);
+
+                    arManager.InstantiateModel(spawnedObject.transform);
 
                 }
-                else if(isDragOn)
-                {
-                    spawnedObject.transform.position = hitPose.position;
-                    
-                }
-                
-
             }
         }
 
