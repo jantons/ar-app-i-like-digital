@@ -9,15 +9,24 @@ namespace ARExample
     {
         Animator myAnimator;
         AnimatorClipInfo[] m_CurrentClipInfo;
-        bool isFollow;
-        public Transform target;
+        
         public float dirNum;
         Transform refPlayerTrans;
+
+        bool isActive = false;
+
+        bool isRightMove = false;
+        bool isLeftMove = false;
+        bool isFollow = false;
+        bool CheckTurn = true;
+        bool isTurn = false;
+        public bool Turn { get => isTurn; }
+        
+
         // Start is called before the first frame update
         void Start()
         {
             myAnimator = gameObject.GetComponent<Animator>();
-            refPlayerTrans = gameObject.GetComponent<ProximityController>().GetPlayerTrans;
 
             SessionEvents.instance.onDangerZoneTriggered += invokeOnDanger;
             SessionEvents.instance.onSafeZoneTriggered += invokeOnSafeRegion;
@@ -28,30 +37,74 @@ namespace ARExample
         // Update is called once per frame
         void Update()
         {
-            Vector3 heading = refPlayerTrans.position - refPlayerTrans.position;
-            dirNum = AngleDir(transform.forward, heading, transform.up);
-
-            if (isFollow)
+            if (isActive)
             {
-                myAnimator.SetFloat("BlendY", 1f);
+                Vector3 heading = refPlayerTrans.position - transform.position;
+                dirNum = AngleDir(transform.forward, heading, transform.up);
+
+                if (isFollow)
+                {
+                    Vector3 toTarget = (refPlayerTrans.position - transform.position).normalized;
+
+                    if (Vector3.Dot(toTarget, transform.forward) > 0)
+                    {
+                        Debug.Log("Target is in front of this game object.");
+                    }
+                    else
+                    {
+                        Debug.Log("Target is not in front of this game object.");
+                    }
+                    myAnimator.SetFloat("BlendY", 1f);
+                }
+
+                if (CheckTurn)
+                {
+                    CheckTurn = false;
+                    CheckDirection();
+                    StopCoroutine("resetCheckTurn");
+                    StartCoroutine(resetCheckTurn(.25f));
+                }
+            }   
+        }
+
+        IEnumerator resetCheckTurn(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+           CheckTurn = true;
+
+        }
+        public void SetModelControllerState(bool state,Transform refPTrans)
+        {
+            isActive = state;
+            refPlayerTrans = refPTrans;
+        }
+        public void SetModelControllerState(bool state)
+        {
+            isActive = state;
+        }
+
+        void CheckDirection()
+        {
+            var targetRelative = transform.InverseTransformPoint(refPlayerTrans.transform.position);
+
+            if (targetRelative.x > 2.5)
+            {
+                myAnimator.SetFloat("BlendX", .75f);
+                Debug.Log(targetRelative.x+"Right");
             }
-
-            if (dirNum != 0)
+            else if (targetRelative.x < -2.5)
             {
-                if (dirNum > 0)
-                {
-                    myAnimator.SetFloat("BlendX", +1);
-                }
-                else
-                {
-                    myAnimator.SetFloat("BlendX", -1);
-                }
+                myAnimator.SetFloat("BlendX", -.75f);
+                Debug.Log(targetRelative.x + "Left");
             }
             else
             {
-                myAnimator.SetFloat("BlendX", 0);
+                isTurn = false;
+                myAnimator.SetFloat("BlendX", 0f);
             }
+
             
+
         }
 
         void invokeOnSafeRegion()
@@ -61,14 +114,21 @@ namespace ARExample
 
         private void invokeOnFollow()
         {
-            myAnimator.SetBool("isMove", true);
-            isFollow = true;
+            if (!isFollow)
+            {
+                isFollow = true;
+                myAnimator.SetFloat("BlendY", 1f);
+                myAnimator.SetBool("isRest", false);
+
+            }
         }
         private void invokeOnUnFollow()
         {
-            myAnimator.SetBool("isMove", false);
-            isFollow = false;
-            myAnimator.SetFloat("BlendY", 0f);
+            if (isFollow)
+            {
+                isFollow = false;
+                myAnimator.SetFloat("BlendY", 0f);
+            }
         }
         void invokeOnDanger()
         {

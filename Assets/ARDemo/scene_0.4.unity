@@ -3068,9 +3068,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d91ec5b7feb4c8f8dd9a3f8c7fdc09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDragOn: 0
-  isSnap: 1
-  snapObject: {fileID: 713056860}
   refObject: {fileID: 8886527195097570650, guid: 74bddd96b096147b2abaf97eb25c0b1c,
     type: 3}
 --- !u!1 &773802391
@@ -4575,7 +4572,7 @@ GameObject:
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4599,7 +4596,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149323614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.291, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5934,7 +5931,7 @@ GameObject:
   m_Layer: 0
   m_Name: ARManager
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5964,7 +5961,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665564388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 949.30865, y: 836.34796, z: 1570.0215}
+  m_LocalPosition: {x: -2.008, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

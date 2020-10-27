@@ -748,6 +748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5ecf62e9f6940c6a718b1b9213cf5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dirNum: 0
 --- !u!114 &5569847393708993366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,6 +763,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   proximitySensor: 0
   safeZoneLimit: 2
+  startfollowLimit: 2.5
+  stopfollowLimit: 2.25
 --- !u!1 &6657886114471451425
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,7 +775,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6657886114471451220}
   - component: {fileID: 6657886114471451249}
-  - component: {fileID: 6657886114471451236}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Untagged
@@ -887,20 +889,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.11128825, y: 0.34706402, z: -0.000000029802322}
     m_Extent: {x: 0.5959014, y: 0.8386917, z: 0.1904465}
   m_DirtyAABB: 0
---- !u!64 &6657886114471451236
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6657886114471451425}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 884922fb19106fc4b81d11a6ef052f1b, type: 3}
 --- !u!1 &6657886114471451426
 GameObject:
   m_ObjectHideFlags: 0

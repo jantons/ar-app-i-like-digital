@@ -25,6 +25,7 @@ namespace ARExample
         public event Action onSafeZoneTriggered;
         public event Action onFollowTriggered;
         public event Action onUnFollowTriggered;
+        public event Action onRestTriggered;
 
         public void DangerZoneTriggered()
         {
@@ -52,6 +53,13 @@ namespace ARExample
             if (onUnFollowTriggered != null)
             {
                 onUnFollowTriggered();
+            }
+        }
+        public void RestTriggered()
+        {
+            if (onRestTriggered != null)
+            {
+                onRestTriggered();
             }
         }
     }

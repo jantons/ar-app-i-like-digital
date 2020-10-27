@@ -11,6 +11,7 @@ namespace ARExample
 
         [SerializeField] float safeZoneLimit = 1f;
         [SerializeField] float startfollowLimit = 4f;
+        [SerializeField] float stopfollowLimit = 3f;
 
         bool isNotified = false;
 
@@ -30,17 +31,18 @@ namespace ARExample
                 {
                     // Safe Zone
                     SessionEvents.instance.SafeZoneTriggere();
-
-                    if (dist > startfollowLimit && dist > (safeZoneLimit + 0.5f))
-                    {
-                        SessionEvents.instance.FollowTriggered();
-                    }
-                    else
-                    {
-                        SessionEvents.instance.UnFollowTriggered();
-                    }
                 }
-                
+                // Follow and Unfollow
+
+                if (dist > startfollowLimit && dist > stopfollowLimit)
+                {
+                    SessionEvents.instance.FollowTriggered();
+                }
+                else
+                {
+                    SessionEvents.instance.UnFollowTriggered();
+                }
+
             }
 
         }
@@ -58,6 +60,7 @@ namespace ARExample
             yield return new WaitForSeconds(delay);
             proximitySensor = true;
             playerTrans = refPlayerTrans;
+            gameObject.GetComponent<ModelController>().SetModelControllerState(true, playerTrans);
         }
     }
 }
