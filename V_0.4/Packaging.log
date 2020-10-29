@@ -1,0 +1,283 @@
+2020-10-28 12:17:25 +0000  Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0x7fbfdcaf54c0; archive(resolved)='<IDEArchive: 0x7fbfe0b066b0>', distributionTask(resolved)='2', distributionDestination(resolved)='2', distributionMethod(resolved)='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fbfdc9c8210>', team(resolved)='<IDEProvisioningDisambiguatableBasicTeam: 0x7fbfe2ffcf90; teamID='QFZ4FZ7N4A', teamName='Jan-Niklas Voigt-Antons', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	Chain (13, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0x7fbfdcaf54c0; archive = '<IDEArchive: 0x7fbfe0b066b0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fbfdc9c8210>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fbfe2ffcf90; teamID='QFZ4FZ7N4A', teamName='Jan-Niklas Voigt-Antons', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionProcessingPipelineContext: 0x7fbfdca0bcb0; archive = '<IDEArchive: 0x7fbfe0b066b0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fbfdc9c8210>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fbfe2ffcf90; teamID='QFZ4FZ7N4A', teamName='Jan-Niklas Voigt-Antons', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fbfe3371f40; archive = '<IDEArchive: 0x7fbfe0b066b0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fbfdc9c8210>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fbfe2ffcf90; teamID='QFZ4FZ7N4A', teamName='Jan-Niklas Voigt-Antons', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fbfdfc09160; archive = '<IDEArchive: 0x7fbfe0b066b0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fbfdc9c8210>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fbfe2ffcf90; teamID='QFZ4FZ7N4A', teamName='Jan-Niklas Voigt-Antons', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fbfdfc5b6a0; archive = '<IDEArchive: 0x7fbfe0b066b0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fbfdc9c8210>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fbfe2ffcf90; teamID='QFZ4FZ7N4A', teamName='Jan-Niklas Voigt-Antons', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fbfa6c05a50; archive = '<IDEArchive: 0x7fbfe0b066b0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fbfdc9c8210>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fbfe2ffcf90; teamID='QFZ4FZ7N4A', teamName='Jan-Niklas Voigt-Antons', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fbfa7326140; archive = '<IDEArchive: 0x7fbfe0b066b0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fbfdc9c8210>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fbfe2ffcf90; teamID='QFZ4FZ7N4A', teamName='Jan-Niklas Voigt-Antons', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fbfe348b9d0; archive = '<IDEArchive: 0x7fbfe0b066b0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fbfdc9c8210>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fbfe2ffcf90; teamID='QFZ4FZ7N4A', teamName='Jan-Niklas Voigt-Antons', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fbfe341a350; archive = '<IDEArchive: 0x7fbfe0b066b0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fbfdc9c8210>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fbfe2ffcf90; teamID='QFZ4FZ7N4A', teamName='Jan-Niklas Voigt-Antons', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fbfde296630; archive = '<IDEArchive: 0x7fbfe0b066b0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fbfdc9c8210>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fbfe2ffcf90; teamID='QFZ4FZ7N4A', teamName='Jan-Niklas Voigt-Antons', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fbfa5f7f5d0; archive = '<IDEArchive: 0x7fbfe0b066b0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fbfdc9c8210>', team='(null)'>
+	<IDEDistributionContext: 0x7fbfe29fac60; archive = '<IDEArchive: 0x7fbfe0b066b0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fbfdc9c8210>', team='(null)'>
+	<IDEDistributionContext: 0x7fbfe0e411f0; archive = '<IDEArchive: 0x7fbfe0b066b0>', distributionMethod='(null)', team='(null)'>
+</IDEDistributionProcessingPipelineContext: 0x7fbfdcaf54c0>
+2020-10-28 12:17:25 +0000  Processing step: IDEDistributionCreateDestRootStep
+2020-10-28 12:17:25 +0000  Processing step: IDEDistributionCopyItemStep
+2020-10-28 12:17:25 +0000  Running /usr/bin/ditto '-V' '/Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/Products/Applications/artest.app' '/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root/Payload/artest.app'
+2020-10-28 12:17:25 +0000  >>> Copying /Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/Products/Applications/artest.app 
+2020-10-28 12:17:25 +0000  copying file ./_CodeSignature/CodeResources ... 
+2020-10-28 12:17:25 +0000  10927 bytes for ./_CodeSignature/CodeResources
+2020-10-28 12:17:25 +0000  copying file ./LaunchScreen-iPhonePortrait.png ... 
+2020-10-28 12:17:25 +0000  138 bytes for ./LaunchScreen-iPhonePortrait.png
+copying file ./LaunchScreen-iPhoneLandscape.png ... 
+2020-10-28 12:17:25 +0000  138 bytes for ./LaunchScreen-iPhoneLandscape.png
+2020-10-28 12:17:25 +0000  copying file ./AppIcon-160x60@2x.png ... 
+2020-10-28 12:17:25 +0000  27770 bytes for ./AppIcon-160x60@2x.png
+2020-10-28 12:17:25 +0000  copying file ./artest ... 
+2020-10-28 12:17:25 +0000  86000 bytes for ./artest
+copying file ./LaunchScreen-iPad.png ... 
+2020-10-28 12:17:25 +0000  138 bytes for ./LaunchScreen-iPad.png
+copying file ./AppIcon-176x76@2x~ipad.png ... 
+2020-10-28 12:17:25 +0000  42186 bytes for ./AppIcon-176x76@2x~ipad.png
+2020-10-28 12:17:25 +0000  copying file ./LaunchScreen-iPad.storyboardc/UIViewController-UnityLaunchScreen-ViewController.nib ... 
+2020-10-28 12:17:25 +0000  934 bytes for ./LaunchScreen-iPad.storyboardc/UIViewController-UnityLaunchScreen-ViewController.nib
+2020-10-28 12:17:25 +0000  copying file ./LaunchScreen-iPad.storyboardc/UnityLaunchScreen-ViewController-view-UnityLaunchScreen-RootView.nib ... 
+2020-10-28 12:17:25 +0000  2395 bytes for ./LaunchScreen-iPad.storyboardc/UnityLaunchScreen-ViewController-view-UnityLaunchScreen-RootView.nib
+2020-10-28 12:17:25 +0000  copying file ./LaunchScreen-iPad.storyboardc/Info.plist ... 
+2020-10-28 12:17:25 +0000  333 bytes for ./LaunchScreen-iPad.storyboardc/Info.plist
+2020-10-28 12:17:25 +0000  copying file ./Assets.car ... 
+2020-10-28 12:17:25 +0000  2947320 bytes for ./Assets.car
+2020-10-28 12:17:25 +0000  copying file ./LaunchScreen-iPhone.storyboardc/UIViewController-UnityLaunchScreen-ViewController.nib ... 
+934 bytes for ./LaunchScreen-iPhone.storyboardc/UIViewController-UnityLaunchScreen-ViewController.nib
+copying file ./LaunchScreen-iPhone.storyboardc/UnityLaunchScreen-ViewController-view-UnityLaunchScreen-RootView.nib ... 
+2020-10-28 12:17:25 +0000  2407 bytes for ./LaunchScreen-iPhone.storyboardc/UnityLaunchScreen-ViewController-view-UnityLaunchScreen-RootView.nib
+copying file ./LaunchScreen-iPhone.storyboardc/Info.plist ... 
+2020-10-28 12:17:25 +0000  333 bytes for ./LaunchScreen-iPhone.storyboardc/Info.plist
+2020-10-28 12:17:25 +0000  copying file ./Frameworks/UnityFramework.framework/_CodeSignature/CodeResources ... 
+2020-10-28 12:17:25 +0000  2016 bytes for ./Frameworks/UnityFramework.framework/_CodeSignature/CodeResources
+2020-10-28 12:17:25 +0000  copying file ./Frameworks/UnityFramework.framework/Info.plist ... 
+2020-10-28 12:17:25 +0000  808 bytes for ./Frameworks/UnityFramework.framework/Info.plist
+2020-10-28 12:17:25 +0000  copying file ./Frameworks/UnityFramework.framework/UnityFramework ... 
+2020-10-28 12:17:25 +0000  191676368 bytes for ./Frameworks/UnityFramework.framework/UnityFramework
+2020-10-28 12:17:25 +0000  copying file ./Frameworks/UnityFramework.framework/profile.json ... 
+2020-10-28 12:17:25 +0000  30527 bytes for ./Frameworks/UnityFramework.framework/profile.json
+2020-10-28 12:17:25 +0000  copying file ./embedded.mobileprovision ... 
+2020-10-28 12:17:25 +0000  7360 bytes for ./embedded.mobileprovision
+2020-10-28 12:17:25 +0000  copying file ./Data/Managed/TypesInScenes.xml ... 
+2020-10-28 12:17:25 +0000  7337 bytes for ./Data/Managed/TypesInScenes.xml
+2020-10-28 12:17:25 +0000  copying file ./Data/Managed/Resources/mscorlib.dll-resources.dat ... 
+2020-10-28 12:17:25 +0000  337563 bytes for ./Data/Managed/Resources/mscorlib.dll-resources.dat
+2020-10-28 12:17:25 +0000  copying file ./Data/Managed/UnityLinkerToEditorData.json ... 
+2020-10-28 12:17:25 +0000  16221 bytes for ./Data/Managed/UnityLinkerToEditorData.json
+2020-10-28 12:17:25 +0000  copying file ./Data/Managed/mono/4.0/machine.config ... 
+2020-10-28 12:17:25 +0000  33648 bytes for ./Data/Managed/mono/4.0/machine.config
+2020-10-28 12:17:25 +0000  copying file ./Data/Managed/EditorToUnityLinkerData.json ... 
+2020-10-28 12:17:25 +0000  83005 bytes for ./Data/Managed/EditorToUnityLinkerData.json
+2020-10-28 12:17:25 +0000  copying file ./Data/Managed/Metadata/global-metadata.dat ... 
+2020-10-28 12:17:25 +0000  3592352 bytes for ./Data/Managed/Metadata/global-metadata.dat
+2020-10-28 12:17:25 +0000  copying file ./Data/globalgamemanagers ... 
+2020-10-28 12:17:25 +0000  77660 bytes for ./Data/globalgamemanagers
+copying file ./Data/boot.config ... 
+2020-10-28 12:17:25 +0000  89 bytes for ./Data/boot.config
+2020-10-28 12:17:25 +0000  copying file ./Data/resources.assets ... 
+2020-10-28 12:17:25 +0000  22352 bytes for ./Data/resources.assets
+2020-10-28 12:17:25 +0000  copying file ./Data/Resources/unity_builtin_extra ... 
+2020-10-28 12:17:25 +0000  563300 bytes for ./Data/Resources/unity_builtin_extra
+2020-10-28 12:17:25 +0000  copying file ./Data/unity default resources ... 
+2020-10-28 12:17:25 +0000  6635836 bytes for ./Data/unity default resources
+copying file ./Data/sharedassets0.assets.resS ... 
+2020-10-28 12:17:25 +0000  18552744 bytes for ./Data/sharedassets0.assets.resS
+copying file ./Data/sharedassets0.assets ... 
+2020-10-28 12:17:25 +0000  3279164 bytes for ./Data/sharedassets0.assets
+copying file ./Data/level0 ... 
+2020-10-28 12:17:25 +0000  48220 bytes for ./Data/level0
+copying file ./Data/resources.assets.resS ... 
+2020-10-28 12:17:25 +0000  174848 bytes for ./Data/resources.assets.resS
+2020-10-28 12:17:25 +0000  copying file ./Data/globalgamemanagers.assets ... 
+2020-10-28 12:17:25 +0000  169176 bytes for ./Data/globalgamemanagers.assets
+2020-10-28 12:17:25 +0000  copying file ./Data/UnitySubsystems/UnityARKit/UnitySubsystemsManifest.json ... 
+2020-10-28 12:17:25 +0000  219 bytes for ./Data/UnitySubsystems/UnityARKit/UnitySubsystemsManifest.json
+2020-10-28 12:17:25 +0000  copying file ./Info.plist ... 
+2020-10-28 12:17:25 +0000  1895 bytes for ./Info.plist
+copying file ./PkgInfo ... 
+2020-10-28 12:17:25 +0000  8 bytes for ./PkgInfo
+2020-10-28 12:17:25 +0000  /usr/bin/ditto exited with 0
+2020-10-28 12:17:25 +0000  Processing step: IDEDistributionEmbedProfileStep
+2020-10-28 12:17:25 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fbfe3cde120; bundleID='com.unity3d.framework', path='<DVTFilePath:0x7fbfe2498a80:'/Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/Products/Applications/artest.app/Frameworks/UnityFramework.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7fbfe32beca0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7fbfdffb2100; name='iPhone Distribution: Jan-Niklas Voigt-Antons (QFZ4FZ7N4A)', hash='2D96D65BAD4EB3FCADDE4ED3188923CFE63BBC58', serialNumber='<DVTSigningCertificateSerialNumber: 0x7fbfdcca7ac0>', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2020-10-16 13:52:15 +0000''>', entitlements='(null)', teamID='QFZ4FZ7N4A', identifier='com.unity3d.framework', executablePath='<DVTFilePath:0x7fbfa5e3e6d0:'/Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/Products/Applications/artest.app/Frameworks/UnityFramework.framework/UnityFramework'>', hardenedRuntime='0'>'>
+2020-10-28 12:17:25 +0000  Processing step: IDEDistributionInfoPlistStep
+2020-10-28 12:17:25 +0000  Skipping step: IDEDistributionInfoPlistStep because it said so
+2020-10-28 12:17:25 +0000  Skipping step: IDEDistributionInfoPlistStep because it said so
+2020-10-28 12:17:25 +0000  Processing step: IDEDistributionItemRemovalStep
+2020-10-28 12:17:25 +0000  Processing step: IDEDistributionAppThinningPlistStep
+2020-10-28 12:17:25 +0000  Skipping step: IDEDistributionAppThinningPlistStep because it said so
+2020-10-28 12:17:25 +0000  Processing step: IDEDistributionCompileBitcodeStep
+2020-10-28 12:17:25 +0000  Skipping step: IDEDistributionCompileBitcodeStep because it said so
+2020-10-28 12:17:25 +0000  Processing step: IDEDistributionCodeSlimmingStep
+2020-10-28 12:17:25 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip '/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root/Payload/artest.app/Frameworks/UnityFramework.framework/UnityFramework' '-l' '-o' '/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root/Payload/artest.app/Frameworks/UnityFramework.framework/UnityFramework'
+2020-10-28 12:17:26 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip exited with 0
+2020-10-28 12:17:26 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip '/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root/Payload/artest.app/artest' '-l' '-o' '/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root/Payload/artest.app/artest'
+2020-10-28 12:17:26 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip exited with 0
+2020-10-28 12:17:26 +0000  Processing step: IDEDistributionCopyBCSymbolMapsStep
+2020-10-28 12:17:26 +0000  Running /usr/bin/ditto '-V' '/Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/BCSymbolMaps/9297827E-CFBF-3E1C-ABEC-F19C297DCEE8.bcsymbolmap' '/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root/BCSymbolMaps/9297827E-CFBF-3E1C-ABEC-F19C297DCEE8.bcsymbolmap'
+2020-10-28 12:17:26 +0000  >>> Copying /Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/BCSymbolMaps/9297827E-CFBF-3E1C-ABEC-F19C297DCEE8.bcsymbolmap 
+2020-10-28 12:17:26 +0000  copying file ./9297827E-CFBF-3E1C-ABEC-F19C297DCEE8.bcsymbolmap ... 
+2020-10-28 12:17:26 +0000  29164772 bytes for ./9297827E-CFBF-3E1C-ABEC-F19C297DCEE8.bcsymbolmap
+2020-10-28 12:17:26 +0000  /usr/bin/ditto exited with 0
+2020-10-28 12:17:26 +0000  Running /usr/bin/ditto '-V' '/Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/BCSymbolMaps/D1A8080C-9858-3526-8F47-92618E130595.bcsymbolmap' '/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root/BCSymbolMaps/D1A8080C-9858-3526-8F47-92618E130595.bcsymbolmap'
+2020-10-28 12:17:26 +0000  >>> Copying /Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/BCSymbolMaps/D1A8080C-9858-3526-8F47-92618E130595.bcsymbolmap 
+2020-10-28 12:17:26 +0000  copying file ./D1A8080C-9858-3526-8F47-92618E130595.bcsymbolmap ... 
+2020-10-28 12:17:26 +0000  678 bytes for ./D1A8080C-9858-3526-8F47-92618E130595.bcsymbolmap
+2020-10-28 12:17:26 +0000  /usr/bin/ditto exited with 0
+2020-10-28 12:17:26 +0000  Processing step: IDEDistributionSymbolsStep
+2020-10-28 12:17:26 +0000  Excluding symbols for UnityFramework.framework
+2020-10-28 12:17:26 +0000  Excluding symbols for artest.app
+2020-10-28 12:17:26 +0000  Processing step: IDEDistributionCopyAppleProvidedContentStep
+2020-10-28 12:17:26 +0000  Processing step: IDEDistributionAppThinningStep
+2020-10-28 12:17:26 +0000  Skipping step: IDEDistributionAppThinningStep because it said so
+2020-10-28 12:17:26 +0000  Processing step: IDEDistributionArchThinningStep
+2020-10-28 12:17:26 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root/Payload/artest.app/Frameworks/UnityFramework.framework/UnityFramework' '-verify_arch' 'arm64e'
+2020-10-28 12:17:26 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2020-10-28 12:17:26 +0000  Skipping architecture thinning for item "UnityFramework" because arch "arm64e" wasn't found
+2020-10-28 12:17:26 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root/Payload/artest.app/artest' '-verify_arch' 'arm64e'
+2020-10-28 12:17:26 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2020-10-28 12:17:26 +0000  Skipping architecture thinning for item "artest" because arch "arm64e" wasn't found
+2020-10-28 12:17:26 +0000  Processing step: IDEDistributionODRStep
+2020-10-28 12:17:26 +0000  Processing step: IDEDistributionStripXattrsStep
+2020-10-28 12:17:26 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fbfe3cde120; bundleID='com.unity3d.framework', path='<DVTFilePath:0x7fbfe2498a80:'/Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/Products/Applications/artest.app/Frameworks/UnityFramework.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7fbfe32beca0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7fbfe0ebecc0; name='iPhone Distribution: Jan-Niklas Voigt-Antons (QFZ4FZ7N4A)', hash='2D96D65BAD4EB3FCADDE4ED3188923CFE63BBC58', serialNumber='<DVTSigningCertificateSerialNumber: 0x7fbfe3226610>', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2020-10-16 13:52:15 +0000''>', entitlements='(null)', teamID='QFZ4FZ7N4A', identifier='com.unity3d.framework', executablePath='<DVTFilePath:0x7fbfa5e3e6d0:'/Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/Products/Applications/artest.app/Frameworks/UnityFramework.framework/UnityFramework'>', hardenedRuntime='0'>'>
+2020-10-28 12:17:26 +0000  Running /usr/bin/xattr '-crs' '/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root/Payload/artest.app'
+2020-10-28 12:17:27 +0000  /usr/bin/xattr exited with 0
+2020-10-28 12:17:27 +0000  Processing step: IDEDistributionCodesignStep
+2020-10-28 12:17:27 +0000  Entitlements for <IDEDistributionItem: 0x7fbfe3cde120; bundleID='com.unity3d.framework', path='<DVTFilePath:0x7fbfe2498a80:'/Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/Products/Applications/artest.app/Frameworks/UnityFramework.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7fbfe32beca0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7fbfe0ebecc0; name='iPhone Distribution: Jan-Niklas Voigt-Antons (QFZ4FZ7N4A)', hash='2D96D65BAD4EB3FCADDE4ED3188923CFE63BBC58', serialNumber='<DVTSigningCertificateSerialNumber: 0x7fbfe32ecdd0>', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2020-10-16 13:52:15 +0000''>', entitlements='(null)', teamID='QFZ4FZ7N4A', identifier='com.unity3d.framework', executablePath='<DVTFilePath:0x7fbfa5e3e6d0:'/Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/Products/Applications/artest.app/Frameworks/UnityFramework.framework/UnityFramework'>', hardenedRuntime='0'>'>: {
+}
+2020-10-28 12:17:27 +0000  Writing entitlements for <IDEDistributionItem: 0x7fbfe3cde120; bundleID='com.unity3d.framework', path='<DVTFilePath:0x7fbfe2498a80:'/Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/Products/Applications/artest.app/Frameworks/UnityFramework.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7fbfe32beca0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7fbfdfd91620; name='iPhone Distribution: Jan-Niklas Voigt-Antons (QFZ4FZ7N4A)', hash='2D96D65BAD4EB3FCADDE4ED3188923CFE63BBC58', serialNumber='<DVTSigningCertificateSerialNumber: 0x7fbfd7123da0>', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2020-10-16 13:52:15 +0000''>', entitlements='(null)', teamID='QFZ4FZ7N4A', identifier='com.unity3d.framework', executablePath='<DVTFilePath:0x7fbfa5e3e6d0:'/Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/Products/Applications/artest.app/Frameworks/UnityFramework.framework/UnityFramework'>', hardenedRuntime='0'>'> to: /var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/entitlements~~~5VwTGi
+2020-10-28 12:17:27 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2D96D65BAD4EB3FCADDE4ED3188923CFE63BBC58' '--entitlements' '/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/entitlements~~~5VwTGi' '--preserve-metadata=identifier,flags,runtime' '/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root/Payload/artest.app/Frameworks/UnityFramework.framework'
+2020-10-28 12:17:28 +0000  /var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root/Payload/artest.app/Frameworks/UnityFramework.framework: signed bundle with Mach-O thin (arm64) [com.unity3d.framework]
+2020-10-28 12:17:28 +0000  /usr/bin/codesign exited with 0
+2020-10-28 12:17:28 +0000  Entitlements for <IDEDistributionItem: 0x7fbfe3caa370; bundleID='de.voigt-antons.ARtest', path='<DVTFilePath:0x7fbfa7354980:'/Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/Products/Applications/artest.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7fbfe2c12a20; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7fbfdfd91620; name='iPhone Distribution: Jan-Niklas Voigt-Antons (QFZ4FZ7N4A)', hash='2D96D65BAD4EB3FCADDE4ED3188923CFE63BBC58', serialNumber='<DVTSigningCertificateSerialNumber: 0x7fbfe0d8e3d0>', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2020-10-16 13:52:15 +0000''>', entitlements='{
+    "application-identifier" = "QFZ4FZ7N4A.de.voigt-antons.ARtest";
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = QFZ4FZ7N4A;
+    "get-task-allow" = 0;
+    "keychain-access-groups" =     (
+        "QFZ4FZ7N4A.de.voigt-antons.ARtest"
+    );
+}', teamID='QFZ4FZ7N4A', identifier='de.voigt-antons.ARtest', executablePath='<DVTFilePath:0x7fbfdfcabe70:'/Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/Products/Applications/artest.app/artest'>', hardenedRuntime='0'>'>: {
+    "application-identifier" = "QFZ4FZ7N4A.de.voigt-antons.ARtest";
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = QFZ4FZ7N4A;
+    "get-task-allow" = 0;
+    "keychain-access-groups" =     (
+        "QFZ4FZ7N4A.de.voigt-antons.ARtest"
+    );
+}
+2020-10-28 12:17:28 +0000  Writing entitlements for <IDEDistributionItem: 0x7fbfe3caa370; bundleID='de.voigt-antons.ARtest', path='<DVTFilePath:0x7fbfa7354980:'/Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/Products/Applications/artest.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7fbfe2c12a20; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7fbfe32e4650; name='iPhone Distribution: Jan-Niklas Voigt-Antons (QFZ4FZ7N4A)', hash='2D96D65BAD4EB3FCADDE4ED3188923CFE63BBC58', serialNumber='<DVTSigningCertificateSerialNumber: 0x7fbfe32247c0>', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2020-10-16 13:52:15 +0000''>', entitlements='{
+    "application-identifier" = "QFZ4FZ7N4A.de.voigt-antons.ARtest";
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = QFZ4FZ7N4A;
+    "get-task-allow" = 0;
+    "keychain-access-groups" =     (
+        "QFZ4FZ7N4A.de.voigt-antons.ARtest"
+    );
+}', teamID='QFZ4FZ7N4A', identifier='de.voigt-antons.ARtest', executablePath='<DVTFilePath:0x7fbfdfcabe70:'/Users/danish/Library/Developer/Xcode/Archives/2020-10-28/Unity-iPhone 28.10.20, 13.13.xcarchive/Products/Applications/artest.app/artest'>', hardenedRuntime='0'>'> to: /var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/entitlements~~~cad2K8
+2020-10-28 12:17:28 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2D96D65BAD4EB3FCADDE4ED3188923CFE63BBC58' '--entitlements' '/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/entitlements~~~cad2K8' '--preserve-metadata=identifier,flags,runtime' '/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root/Payload/artest.app'
+2020-10-28 12:17:29 +0000  /var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root/Payload/artest.app: signed app bundle with Mach-O thin (arm64) [de.voigt-antons.ARtest]
+2020-10-28 12:17:29 +0000  /usr/bin/codesign exited with 0
+2020-10-28 12:17:29 +0000  Processing step: IDEDistributionZipODRItemStep
+2020-10-28 12:17:29 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2020-10-28 12:17:29 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2020-10-28 12:17:29 +0000  Processing step: IDEDistributionCreateIPAStep
+2020-10-28 12:17:29 +0000  Running /usr/bin/ditto '-V' '-c' '-k' '--norsrc' '/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root' '/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Packages/artest.ipa'
+2020-10-28 12:17:29 +0000  >>> Copying /var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root 
+2020-10-28 12:17:29 +0000  copying file ./BCSymbolMaps/D1A8080C-9858-3526-8F47-92618E130595.bcsymbolmap ... 
+2020-10-28 12:17:29 +0000  678 bytes for ./BCSymbolMaps/D1A8080C-9858-3526-8F47-92618E130595.bcsymbolmap
+copying file ./BCSymbolMaps/9297827E-CFBF-3E1C-ABEC-F19C297DCEE8.bcsymbolmap ... 
+2020-10-28 12:17:29 +0000  29164772 bytes for ./BCSymbolMaps/9297827E-CFBF-3E1C-ABEC-F19C297DCEE8.bcsymbolmap
+2020-10-28 12:17:29 +0000  copying file ./Payload/artest.app/_CodeSignature/CodeResources ... 
+10927 bytes for ./Payload/artest.app/_CodeSignature/CodeResources
+copying file ./Payload/artest.app/LaunchScreen-iPhonePortrait.png ... 
+2020-10-28 12:17:29 +0000  138 bytes for ./Payload/artest.app/LaunchScreen-iPhonePortrait.png
+copying file ./Payload/artest.app/LaunchScreen-iPhoneLandscape.png ... 
+138 bytes for ./Payload/artest.app/LaunchScreen-iPhoneLandscape.png
+2020-10-28 12:17:29 +0000  copying file ./Payload/artest.app/AppIcon-160x60@2x.png ... 
+2020-10-28 12:17:29 +0000  27770 bytes for ./Payload/artest.app/AppIcon-160x60@2x.png
+copying file ./Payload/artest.app/artest ... 
+2020-10-28 12:17:29 +0000  67760 bytes for ./Payload/artest.app/artest
+copying file ./Payload/artest.app/LaunchScreen-iPad.png ... 
+2020-10-28 12:17:29 +0000  138 bytes for ./Payload/artest.app/LaunchScreen-iPad.png
+copying file ./Payload/artest.app/AppIcon-176x76@2x~ipad.png ... 
+2020-10-28 12:17:29 +0000  42186 bytes for ./Payload/artest.app/AppIcon-176x76@2x~ipad.png
+2020-10-28 12:17:29 +0000  copying file ./Payload/artest.app/LaunchScreen-iPad.storyboardc/UIViewController-UnityLaunchScreen-ViewController.nib ... 
+934 bytes for ./Payload/artest.app/LaunchScreen-iPad.storyboardc/UIViewController-UnityLaunchScreen-ViewController.nib
+copying file ./Payload/artest.app/LaunchScreen-iPad.storyboardc/UnityLaunchScreen-ViewController-view-UnityLaunchScreen-RootView.nib ... 
+2020-10-28 12:17:29 +0000  2395 bytes for ./Payload/artest.app/LaunchScreen-iPad.storyboardc/UnityLaunchScreen-ViewController-view-UnityLaunchScreen-RootView.nib
+copying file ./Payload/artest.app/LaunchScreen-iPad.storyboardc/Info.plist ... 
+2020-10-28 12:17:29 +0000  333 bytes for ./Payload/artest.app/LaunchScreen-iPad.storyboardc/Info.plist
+copying file ./Payload/artest.app/Assets.car ... 
+2020-10-28 12:17:29 +0000  2947320 bytes for ./Payload/artest.app/Assets.car
+2020-10-28 12:17:29 +0000  copying file ./Payload/artest.app/LaunchScreen-iPhone.storyboardc/UIViewController-UnityLaunchScreen-ViewController.nib ... 
+934 bytes for ./Payload/artest.app/LaunchScreen-iPhone.storyboardc/UIViewController-UnityLaunchScreen-ViewController.nib
+copying file ./Payload/artest.app/LaunchScreen-iPhone.storyboardc/UnityLaunchScreen-ViewController-view-UnityLaunchScreen-RootView.nib ... 
+2020-10-28 12:17:29 +0000  2407 bytes for ./Payload/artest.app/LaunchScreen-iPhone.storyboardc/UnityLaunchScreen-ViewController-view-UnityLaunchScreen-RootView.nib
+copying file ./Payload/artest.app/LaunchScreen-iPhone.storyboardc/Info.plist ... 
+333 bytes for ./Payload/artest.app/LaunchScreen-iPhone.storyboardc/Info.plist
+2020-10-28 12:17:29 +0000  copying file ./Payload/artest.app/Frameworks/UnityFramework.framework/_CodeSignature/CodeResources ... 
+2020-10-28 12:17:29 +0000  2016 bytes for ./Payload/artest.app/Frameworks/UnityFramework.framework/_CodeSignature/CodeResources
+copying file ./Payload/artest.app/Frameworks/UnityFramework.framework/Info.plist ... 
+808 bytes for ./Payload/artest.app/Frameworks/UnityFramework.framework/Info.plist
+2020-10-28 12:17:29 +0000  copying file ./Payload/artest.app/Frameworks/UnityFramework.framework/UnityFramework ... 
+2020-10-28 12:17:34 +0000  165009344 bytes for ./Payload/artest.app/Frameworks/UnityFramework.framework/UnityFramework
+copying file ./Payload/artest.app/Frameworks/UnityFramework.framework/profile.json ... 
+2020-10-28 12:17:34 +0000  30527 bytes for ./Payload/artest.app/Frameworks/UnityFramework.framework/profile.json
+2020-10-28 12:17:34 +0000  copying file ./Payload/artest.app/embedded.mobileprovision ... 
+2020-10-28 12:17:34 +0000  7360 bytes for ./Payload/artest.app/embedded.mobileprovision
+2020-10-28 12:17:34 +0000  copying file ./Payload/artest.app/Data/Managed/TypesInScenes.xml ... 
+2020-10-28 12:17:34 +0000  7337 bytes for ./Payload/artest.app/Data/Managed/TypesInScenes.xml
+2020-10-28 12:17:34 +0000  copying file ./Payload/artest.app/Data/Managed/Resources/mscorlib.dll-resources.dat ... 
+2020-10-28 12:17:34 +0000  337563 bytes for ./Payload/artest.app/Data/Managed/Resources/mscorlib.dll-resources.dat
+copying file ./Payload/artest.app/Data/Managed/UnityLinkerToEditorData.json ... 
+2020-10-28 12:17:34 +0000  16221 bytes for ./Payload/artest.app/Data/Managed/UnityLinkerToEditorData.json
+2020-10-28 12:17:34 +0000  copying file ./Payload/artest.app/Data/Managed/mono/4.0/machine.config ... 
+2020-10-28 12:17:34 +0000  33648 bytes for ./Payload/artest.app/Data/Managed/mono/4.0/machine.config
+2020-10-28 12:17:34 +0000  copying file ./Payload/artest.app/Data/Managed/EditorToUnityLinkerData.json ... 
+2020-10-28 12:17:34 +0000  83005 bytes for ./Payload/artest.app/Data/Managed/EditorToUnityLinkerData.json
+2020-10-28 12:17:34 +0000  copying file ./Payload/artest.app/Data/Managed/Metadata/global-metadata.dat ... 
+2020-10-28 12:17:34 +0000  3592352 bytes for ./Payload/artest.app/Data/Managed/Metadata/global-metadata.dat
+2020-10-28 12:17:34 +0000  copying file ./Payload/artest.app/Data/globalgamemanagers ... 
+2020-10-28 12:17:34 +0000  77660 bytes for ./Payload/artest.app/Data/globalgamemanagers
+copying file ./Payload/artest.app/Data/boot.config ... 
+2020-10-28 12:17:34 +0000  89 bytes for ./Payload/artest.app/Data/boot.config
+copying file ./Payload/artest.app/Data/resources.assets ... 
+2020-10-28 12:17:34 +0000  22352 bytes for ./Payload/artest.app/Data/resources.assets
+2020-10-28 12:17:34 +0000  copying file ./Payload/artest.app/Data/Resources/unity_builtin_extra ... 
+2020-10-28 12:17:34 +0000  563300 bytes for ./Payload/artest.app/Data/Resources/unity_builtin_extra
+copying file ./Payload/artest.app/Data/unity default resources ... 
+2020-10-28 12:17:34 +0000  6635836 bytes for ./Payload/artest.app/Data/unity default resources
+copying file ./Payload/artest.app/Data/sharedassets0.assets.resS ... 
+2020-10-28 12:17:35 +0000  18552744 bytes for ./Payload/artest.app/Data/sharedassets0.assets.resS
+copying file ./Payload/artest.app/Data/sharedassets0.assets ... 
+2020-10-28 12:17:36 +0000  3279164 bytes for ./Payload/artest.app/Data/sharedassets0.assets
+copying file ./Payload/artest.app/Data/level0 ... 
+2020-10-28 12:17:36 +0000  48220 bytes for ./Payload/artest.app/Data/level0
+copying file ./Payload/artest.app/Data/resources.assets.resS ... 
+2020-10-28 12:17:36 +0000  174848 bytes for ./Payload/artest.app/Data/resources.assets.resS
+copying file ./Payload/artest.app/Data/globalgamemanagers.assets ... 
+2020-10-28 12:17:36 +0000  169176 bytes for ./Payload/artest.app/Data/globalgamemanagers.assets
+2020-10-28 12:17:36 +0000  copying file ./Payload/artest.app/Data/UnitySubsystems/UnityARKit/UnitySubsystemsManifest.json ... 
+219 bytes for ./Payload/artest.app/Data/UnitySubsystems/UnityARKit/UnitySubsystemsManifest.json
+2020-10-28 12:17:36 +0000  copying file ./Payload/artest.app/Info.plist ... 
+1895 bytes for ./Payload/artest.app/Info.plist
+copying file ./Payload/artest.app/PkgInfo ... 
+2020-10-28 12:17:36 +0000  8 bytes for ./Payload/artest.app/PkgInfo
+2020-10-28 12:17:36 +0000  /usr/bin/ditto exited with 0
+2020-10-28 12:17:36 +0000  Processing step: IDEDistributionAppStoreInformationStep
+2020-10-28 12:17:36 +0000  Skipping step: IDEDistributionAppStoreInformationStep because it said so
+2020-10-28 12:17:36 +0000  Processing step: IDEDistributionGenerateProcessedDistributionItems
+2020-10-28 12:17:36 +0000  IDEDistributionItem init <DVTFilePath:0x7fbfe31e0660:'/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root/Payload/artest.app/Frameworks/UnityFramework.framework'>
+2020-10-28 12:17:36 +0000  IDEDistributionItem init <DVTFilePath:0x7fbfdf983a40:'/var/folders/qw/wxg8bh2d6pz80lpkqylkyklh0000gp/T/XcodeDistPipeline.~~~knwV6S/Root/Payload/artest.app'>
+2020-10-28 12:17:36 +0000  Processing step: IDEDistributionCreateManifestStep
+2020-10-28 12:17:36 +0000  Skipping step: IDEDistributionCreateManifestStep because it said so
