@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 namespace ARExample
 {
     public class ModelController : MonoBehaviour
@@ -21,6 +18,7 @@ namespace ARExample
         bool CheckTurn = true;
         bool isTurn = false;
         public bool Turn { get => isTurn; }
+        OSC_StreamingController oscController;
         
 
         // Start is called before the first frame update
@@ -32,6 +30,7 @@ namespace ARExample
             SessionEvents.instance.onSafeZoneTriggered += invokeOnSafeRegion;
             SessionEvents.instance.onFollowTriggered += invokeOnFollow;
             SessionEvents.instance.onUnFollowTriggered += invokeOnUnFollow;
+            oscController = OSC_StreamingController.instance;
         }
 
         // Update is called once per frame
@@ -64,7 +63,8 @@ namespace ARExample
                     StopCoroutine("resetCheckTurn");
                     StartCoroutine(resetCheckTurn(.25f));
                 }
-            }   
+            }
+            oscController.SendLocation_XZ(transform.position.x, transform.position.z);
         }
 
         IEnumerator resetCheckTurn(float delay)
