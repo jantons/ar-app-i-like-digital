@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.XR.ARFoundation;
 namespace ARExample
 {
     public class ARManager : MonoBehaviour
@@ -14,14 +14,15 @@ namespace ARExample
 
         [SerializeField] GameObject[] ARModel;
 
-
         public int ModelLevel { get => modelLevel; set => modelLevel = value; }
 
         public GameObject OnScreenModel { set => onScreenModel = value; }
 
-
-
         public static ARManager Instance;
+
+        [SerializeField] GameObject findPlane;
+        Transform spawnTransform;
+        float floorLevel;
 
         #region Initialization
         void Awake()
@@ -92,20 +93,26 @@ namespace ARExample
         }
         #endregion
 
-
-        #region Debug
-
-#if UNITY_EDITOR
         private void Start()
         {
+#if UNITY_EDITOR
             //onScreenModel.GetComponent<ProximityController>().setProximitySensor(true, playerObj);
-            onScreenModel.GetComponent<ProximityController>().EnableProximity(3f, playerObj.transform);
+            onScreenModel = GameObject.Find("Wolf");
+#endif
+            findPlane.SetActive(true);
+            StartCoroutine("DelayDetection");
+
         }
 
-
-#endif
-
-        #endregion
+        IEnumerator DelayDetection()
+        {
+            yield return new WaitForSeconds(3f);
+            findPlane.SetActive(false);
+            var plane = GameObject.Find("AR Plane Debug Visualizer");
+            floorLevel = plane.transform.position.y;
+            spawnTransform.position = new Vector3(0, floorLevel, -3);
+            InstantiateModel(spawnTransform);
+        }
 
     }
 }
