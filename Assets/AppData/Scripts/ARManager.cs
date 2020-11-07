@@ -18,9 +18,12 @@ namespace ARExample
 
         public GameObject OnScreenModel { set => onScreenModel = value; }
 
+        public myAnimator C_ModelAnimator { get => onScreenModel.GetComponent<myAnimator>(); }
+
         public static ARManager Instance;
 
         [SerializeField] GameObject findPlane;
+        OSC_StreamingController osc_Controller;
         Transform spawnTransform;
         float floorLevel;
 
@@ -79,18 +82,7 @@ namespace ARExample
             onScreenModel.GetComponent<Animator>().Play(newState);
         }
 
-        public void InstantiateModel(Transform spawnReference)
-        {
-            onScreenModel = Instantiate(GetARModel(), spawnReference.position, Quaternion.identity);
-
-            Vector3 originalRotation = onScreenModel.transform.eulerAngles;
-            onScreenModel.transform.LookAt(Camera.main.transform.position, -Vector3.up);
-            Vector3 newRotation = onScreenModel.transform.eulerAngles;
-            onScreenModel.transform.eulerAngles = new Vector3(originalRotation.x, newRotation.y, originalRotation.z);
-
-            onScreenModel.GetComponent<ProximityController>().EnableProximity(3f, playerObj.transform);
-
-        }
+        
         #endregion
 
         private void Start()
@@ -98,6 +90,7 @@ namespace ARExample
 #if UNITY_EDITOR
             //onScreenModel.GetComponent<ProximityController>().setProximitySensor(true, playerObj);
             onScreenModel = GameObject.Find("Wolf");
+
 #endif
             findPlane.SetActive(true);
             StartCoroutine("DelayDetection");
@@ -109,9 +102,35 @@ namespace ARExample
             yield return new WaitForSeconds(3f);
             findPlane.SetActive(false);
             var plane = GameObject.Find("AR Plane Debug Visualizer");
-            floorLevel = plane.transform.position.y;
+            if (plane == null)
+            {
+                floorLevel = -1;
+            }
+            else
+            {
+                floorLevel = plane.transform.position.y;
+
+            }
+            
+            spawnTransform = gameObject.transform;
             spawnTransform.position = new Vector3(0, floorLevel, -3);
             InstantiateModel(spawnTransform);
+        }
+        public void InstantiateModel(Transform spawnReference)
+        {
+            onScreenModel = Instantiate(GetARModel(), spawnReference.position, Quaternion.identity);
+
+            Vector3 originalRotation = onScreenModel.transform.eulerAngles;
+            onScreenModel.transform.LookAt(Camera.main.transform.position, -Vector3.up);
+            Vector3 newRotation = onScreenModel.transform.eulerAngles;
+            onScreenModel.transform.eulerAngles = new Vector3(originalRotation.x, newRotation.y, originalRotation.z);
+                osc_Controller = OSC_StreamingController.instance;
+            osc_Controller.M_Controller_Instance = onScreenModel.GetComponent<ModelController>();
+                osc_Controller.Init();
+            onScreenModel.GetComponent<ProximityController>().EnableProximity(3f, playerObj.transform);
+
+            
+
         }
 
     }

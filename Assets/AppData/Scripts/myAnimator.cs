@@ -118,4 +118,8 @@ public class myAnimator : MonoBehaviour
         modelAnimator.GetComponent<Transform>().eulerAngles = new Vector3(0, 150, 0);
 
     }
+    public void OnReceivePush15(OscMessage message)
+    {
+        Debug.Log(message.GetFloat(0));
+    }
 }

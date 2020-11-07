@@ -102,9 +102,6 @@ namespace ARExample
                 isTurn = false;
                 myAnimator.SetFloat("BlendX", 0f);
             }
-
-            
-
         }
 
         void invokeOnSafeRegion()
@@ -183,6 +180,59 @@ namespace ARExample
             }
         }
 
+        public void OnReceivePush15(OscMessage message)
+        {
+            myAnimator.SetBool("isAuto", true);
+            myAnimator.StopPlayback();
+            myAnimator.Play("state1", -1, 0);
+            Debug.Log(message.GetFloat(0));
+        }
+        public void OnReceiveStop1(OscMessage message)
+        {
+            myAnimator.SetBool("isAuto", false);
+            myAnimator.StopPlayback();
+            myAnimator.Play("state1", -1, 0);
+            Debug.Log(message.GetFloat(0));
+        }
 
-}
+        public void OnReceiveStop2(OscMessage message)
+        {
+            myAnimator.SetBool("isAuto", false);
+            myAnimator.StopPlayback();
+            myAnimator.Play("state2", -1, 0);
+            Debug.Log(message.GetFloat(0));
+        }
+
+        public void OnReceiveStop3(OscMessage message)
+        {
+            myAnimator.SetBool("isAuto", false);
+            myAnimator.StopPlayback();
+            myAnimator.Play("state3", -1, 0);
+            Debug.Log(message.GetFloat(0));
+        }
+
+        public void OnReceiveStop4(OscMessage message)
+        {
+            myAnimator.SetBool("isAuto", false);
+            myAnimator.StopPlayback();
+            myAnimator.Play("state4", -1, 0);
+            Debug.Log(message.GetFloat(0));
+        }
+
+        public void OnReceiveStop5(OscMessage message)
+        {
+            myAnimator.SetBool("isAuto", false);
+            myAnimator.StopPlayback();
+            myAnimator.Play("state5", -1, 0);
+            Debug.Log(message.GetFloat(0));
+        }
+
+        public void OnReceiveStop6(OscMessage message)
+        {
+            myAnimator.SetBool("isAuto", false);
+            myAnimator.StopPlayback();
+            myAnimator.Play("state6", -1, 0);
+            Debug.Log(message.GetFloat(0));
+        }
+    }
 }
