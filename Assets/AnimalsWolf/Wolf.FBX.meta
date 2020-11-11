@@ -11,137 +11,354 @@ labels:
 - Animal
 - Bone
 - RawBone
-timeCreated: 1453843892
-licenseType: Store
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: RigChest
-    100002: RigHead
-    100004: RigJaw
-    100006: RigLBLeg1
-    100008: RigLBLeg2
-    100010: RigLBLegAnkle
-    100012: RigLBLegDigit11
-    100014: RigLBLegDigit12
-    100016: RigLEar1
-    100018: RigLEyelid
-    100020: RigLFLeg1
-    100022: RigLFLeg2
-    100024: RigLFLegAnkle
-    100026: RigLFLegCollarbone
-    100028: RigLFLegDigit11
-    100030: RigLFLegDigit12
-    100032: RigNeck1
-    100034: RigNeck2
-    100036: RigPelvis
-    100038: RigRBLeg1
-    100040: RigRBLeg2
-    100042: RigRBLegAnkle
-    100044: RigRBLegDigit11
-    100046: RigRBLegDigit12
-    100048: RigREar1
-    100050: RigREyelid
-    100052: RigRFLeg1
-    100054: RigRFLeg2
-    100056: RigRFLegAnkle
-    100058: RigRFLegCollarbone
-    100060: RigRFLegDigit11
-    100062: RigRFLegDigit12
-    100064: RigRoot
-    100066: RigSpine1
-    100068: RigSpine2
-    100070: RigTail1
-    100072: RigTail2
-    100074: RigTail3
-    100076: RigTail4
-    100078: RigTongue1
-    100080: RigTongue2
-    100082: RigTongue3
-    100084: //RootNode
-    100086: Wolf
-    100088: Wolf 1
-    100090: Wolf_LOD1
-    100092: Wolf_LOD2
-    100094: Wolf_LOD3
-    400000: RigChest
-    400002: RigHead
-    400004: RigJaw
-    400006: RigLBLeg1
-    400008: RigLBLeg2
-    400010: RigLBLegAnkle
-    400012: RigLBLegDigit11
-    400014: RigLBLegDigit12
-    400016: RigLEar1
-    400018: RigLEyelid
-    400020: RigLFLeg1
-    400022: RigLFLeg2
-    400024: RigLFLegAnkle
-    400026: RigLFLegCollarbone
-    400028: RigLFLegDigit11
-    400030: RigLFLegDigit12
-    400032: RigNeck1
-    400034: RigNeck2
-    400036: RigPelvis
-    400038: RigRBLeg1
-    400040: RigRBLeg2
-    400042: RigRBLegAnkle
-    400044: RigRBLegDigit11
-    400046: RigRBLegDigit12
-    400048: RigREar1
-    400050: RigREyelid
-    400052: RigRFLeg1
-    400054: RigRFLeg2
-    400056: RigRFLegAnkle
-    400058: RigRFLegCollarbone
-    400060: RigRFLegDigit11
-    400062: RigRFLegDigit12
-    400064: RigRoot
-    400066: RigSpine1
-    400068: RigSpine2
-    400070: RigTail1
-    400072: RigTail2
-    400074: RigTail3
-    400076: RigTail4
-    400078: RigTongue1
-    400080: RigTongue2
-    400082: RigTongue3
-    400084: Wolf
-    400086: //RootNode
-    400088: Wolf 1
-    400090: Wolf_LOD1
-    400092: Wolf_LOD2
-    400094: Wolf_LOD3
-    4300000: Wolf
-    4300002: Wolf_LOD1
-    4300004: Wolf_LOD2
-    4300006: Wolf_LOD3
-    9500000: //RootNode
-    13700000: Wolf 1
-    13700002: Wolf_LOD1
-    13700004: Wolf_LOD2
-    13700006: Wolf_LOD3
-    13700008: Wolf
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: RigChest
+  - first:
+      1: 100002
+    second: RigHead
+  - first:
+      1: 100004
+    second: RigJaw
+  - first:
+      1: 100006
+    second: RigLBLeg1
+  - first:
+      1: 100008
+    second: RigLBLeg2
+  - first:
+      1: 100010
+    second: RigLBLegAnkle
+  - first:
+      1: 100012
+    second: RigLBLegDigit11
+  - first:
+      1: 100014
+    second: RigLBLegDigit12
+  - first:
+      1: 100016
+    second: RigLEar1
+  - first:
+      1: 100018
+    second: RigLEyelid
+  - first:
+      1: 100020
+    second: RigLFLeg1
+  - first:
+      1: 100022
+    second: RigLFLeg2
+  - first:
+      1: 100024
+    second: RigLFLegAnkle
+  - first:
+      1: 100026
+    second: RigLFLegCollarbone
+  - first:
+      1: 100028
+    second: RigLFLegDigit11
+  - first:
+      1: 100030
+    second: RigLFLegDigit12
+  - first:
+      1: 100032
+    second: RigNeck1
+  - first:
+      1: 100034
+    second: RigNeck2
+  - first:
+      1: 100036
+    second: RigPelvis
+  - first:
+      1: 100038
+    second: RigRBLeg1
+  - first:
+      1: 100040
+    second: RigRBLeg2
+  - first:
+      1: 100042
+    second: RigRBLegAnkle
+  - first:
+      1: 100044
+    second: RigRBLegDigit11
+  - first:
+      1: 100046
+    second: RigRBLegDigit12
+  - first:
+      1: 100048
+    second: RigREar1
+  - first:
+      1: 100050
+    second: RigREyelid
+  - first:
+      1: 100052
+    second: RigRFLeg1
+  - first:
+      1: 100054
+    second: RigRFLeg2
+  - first:
+      1: 100056
+    second: RigRFLegAnkle
+  - first:
+      1: 100058
+    second: RigRFLegCollarbone
+  - first:
+      1: 100060
+    second: RigRFLegDigit11
+  - first:
+      1: 100062
+    second: RigRFLegDigit12
+  - first:
+      1: 100064
+    second: RigRoot
+  - first:
+      1: 100066
+    second: RigSpine1
+  - first:
+      1: 100068
+    second: RigSpine2
+  - first:
+      1: 100070
+    second: RigTail1
+  - first:
+      1: 100072
+    second: RigTail2
+  - first:
+      1: 100074
+    second: RigTail3
+  - first:
+      1: 100076
+    second: RigTail4
+  - first:
+      1: 100078
+    second: RigTongue1
+  - first:
+      1: 100080
+    second: RigTongue2
+  - first:
+      1: 100082
+    second: RigTongue3
+  - first:
+      1: 100084
+    second: //RootNode
+  - first:
+      1: 100086
+    second: Wolf
+  - first:
+      1: 100088
+    second: Wolf 1
+  - first:
+      1: 100090
+    second: Wolf_LOD1
+  - first:
+      1: 100092
+    second: Wolf_LOD2
+  - first:
+      1: 100094
+    second: Wolf_LOD3
+  - first:
+      4: 400000
+    second: RigChest
+  - first:
+      4: 400002
+    second: RigHead
+  - first:
+      4: 400004
+    second: RigJaw
+  - first:
+      4: 400006
+    second: RigLBLeg1
+  - first:
+      4: 400008
+    second: RigLBLeg2
+  - first:
+      4: 400010
+    second: RigLBLegAnkle
+  - first:
+      4: 400012
+    second: RigLBLegDigit11
+  - first:
+      4: 400014
+    second: RigLBLegDigit12
+  - first:
+      4: 400016
+    second: RigLEar1
+  - first:
+      4: 400018
+    second: RigLEyelid
+  - first:
+      4: 400020
+    second: RigLFLeg1
+  - first:
+      4: 400022
+    second: RigLFLeg2
+  - first:
+      4: 400024
+    second: RigLFLegAnkle
+  - first:
+      4: 400026
+    second: RigLFLegCollarbone
+  - first:
+      4: 400028
+    second: RigLFLegDigit11
+  - first:
+      4: 400030
+    second: RigLFLegDigit12
+  - first:
+      4: 400032
+    second: RigNeck1
+  - first:
+      4: 400034
+    second: RigNeck2
+  - first:
+      4: 400036
+    second: RigPelvis
+  - first:
+      4: 400038
+    second: RigRBLeg1
+  - first:
+      4: 400040
+    second: RigRBLeg2
+  - first:
+      4: 400042
+    second: RigRBLegAnkle
+  - first:
+      4: 400044
+    second: RigRBLegDigit11
+  - first:
+      4: 400046
+    second: RigRBLegDigit12
+  - first:
+      4: 400048
+    second: RigREar1
+  - first:
+      4: 400050
+    second: RigREyelid
+  - first:
+      4: 400052
+    second: RigRFLeg1
+  - first:
+      4: 400054
+    second: RigRFLeg2
+  - first:
+      4: 400056
+    second: RigRFLegAnkle
+  - first:
+      4: 400058
+    second: RigRFLegCollarbone
+  - first:
+      4: 400060
+    second: RigRFLegDigit11
+  - first:
+      4: 400062
+    second: RigRFLegDigit12
+  - first:
+      4: 400064
+    second: RigRoot
+  - first:
+      4: 400066
+    second: RigSpine1
+  - first:
+      4: 400068
+    second: RigSpine2
+  - first:
+      4: 400070
+    second: RigTail1
+  - first:
+      4: 400072
+    second: RigTail2
+  - first:
+      4: 400074
+    second: RigTail3
+  - first:
+      4: 400076
+    second: RigTail4
+  - first:
+      4: 400078
+    second: RigTongue1
+  - first:
+      4: 400080
+    second: RigTongue2
+  - first:
+      4: 400082
+    second: RigTongue3
+  - first:
+      4: 400084
+    second: Wolf
+  - first:
+      4: 400086
+    second: //RootNode
+  - first:
+      4: 400088
+    second: Wolf 1
+  - first:
+      4: 400090
+    second: Wolf_LOD1
+  - first:
+      4: 400092
+    second: Wolf_LOD2
+  - first:
+      4: 400094
+    second: Wolf_LOD3
+  - first:
+      43: 4300000
+    second: Wolf
+  - first:
+      43: 4300002
+    second: Wolf_LOD1
+  - first:
+      43: 4300004
+    second: Wolf_LOD2
+  - first:
+      43: 4300006
+    second: Wolf_LOD3
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Wolf 1
+  - first:
+      137: 13700002
+    second: Wolf_LOD1
+  - first:
+      137: 13700004
+    second: Wolf_LOD2
+  - first:
+      137: 13700006
+    second: Wolf_LOD3
+  - first:
+      137: 13700008
+    second: Wolf
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 1
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleRotations: 1
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -149,25 +366,45 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 0
-  copyAvatar: 0
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
   humanDescription:
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -177,11 +414,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: RigRoot
     hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

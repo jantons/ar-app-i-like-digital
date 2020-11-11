@@ -7,6 +7,9 @@ public class OSC_StreamingController:MonoBehaviour
     public static OSC_StreamingController instance;
     ModelController m_Controller;
     public ModelController M_Controller_Instance { set => m_Controller = value; }
+
+    PositionStreamOutlet osc_PositionStreamOutlet;
+    StateStreamOutlet osc_StateStreamOutlet;
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,6 +24,23 @@ public class OSC_StreamingController:MonoBehaviour
         }
         osc = gameObject.GetComponent<OSC>();
     }
+    public void Init()
+    {
+
+        osc.SetAddressHandler("/1/push15", m_Controller.OnReceivePush1);
+
+        osc.SetAddressHandler("/1/stop1", m_Controller.OnReceiveStop10);
+        osc.SetAddressHandler("/1/stop2", m_Controller.OnReceiveStop11);
+        osc.SetAddressHandler("/1/stop3", m_Controller.OnReceiveStop12);
+        osc.SetAddressHandler("/1/stop4", m_Controller.OnReceiveStop13);
+        osc.SetAddressHandler("/1/stop5", m_Controller.OnReceiveStop14);
+
+        osc_PositionStreamOutlet = m_Controller.GetComponent<PositionStreamOutlet>();
+        osc_StateStreamOutlet = m_Controller.GetComponent<StateStreamOutlet>();
+
+       osc_PositionStreamOutlet.init();
+    }
+
 
     public void SendLocation_XZ(float position_X, float position_Z)
     {
@@ -32,7 +52,7 @@ public class OSC_StreamingController:MonoBehaviour
         message.values.Add(position_Z);
         osc.Send(message);
     }
-    public void SendMessage(string address, string value)
+    public void StreamMessage(string address, string value)
     {
         OscMessage message;
 
@@ -41,31 +61,23 @@ public class OSC_StreamingController:MonoBehaviour
         message.values.Add(value);
         osc.Send(message);
     }
-
-    private void Update()
+    public void StreamMessage(string address, int value)
     {
-        SendMessage("/test/1", "hello");
+        OscMessage message;
+
+        message = new OscMessage();
+        message.address = address;
+        message.values.Add(value);
+        osc.Send(message);
     }
-
-
-    // Use this for initialization
-    void Start()
+    public void StreamMessage(string address, float value)
     {
+        OscMessage message;
 
+        message = new OscMessage();
+        message.address = address;
+        message.values.Add(value);
+        osc.Send(message);
     }
-
-    public void Init()
-    {
-        osc.SetAddressHandler("/1/push15", m_Controller.OnReceivePush15);
-        //osc.SetAddressHandler("/1/push15", OnReceivePush15);
-        osc.SetAddressHandler("/1/stop1", m_Controller.OnReceiveStop1);
-        osc.SetAddressHandler("/1/stop2", m_Controller.OnReceiveStop2);
-        osc.SetAddressHandler("/1/stop3", m_Controller.OnReceiveStop3);
-        osc.SetAddressHandler("/1/stop4", m_Controller.OnReceiveStop4);
-        osc.SetAddressHandler("/1/stop5", m_Controller.OnReceiveStop5);
-        osc.SetAddressHandler("/1/stop6", m_Controller.OnReceiveStop6);
-
-    }
-
 
 }

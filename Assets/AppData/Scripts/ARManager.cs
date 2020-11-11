@@ -124,9 +124,13 @@ namespace ARExample
             onScreenModel.transform.LookAt(Camera.main.transform.position, -Vector3.up);
             Vector3 newRotation = onScreenModel.transform.eulerAngles;
             onScreenModel.transform.eulerAngles = new Vector3(originalRotation.x, newRotation.y, originalRotation.z);
+
+            #region OSC
                 osc_Controller = OSC_StreamingController.instance;
-            osc_Controller.M_Controller_Instance = onScreenModel.GetComponent<ModelController>();
+                osc_Controller.M_Controller_Instance = onScreenModel.GetComponent<ModelController>();
                 osc_Controller.Init();
+            #endregion
+
             onScreenModel.GetComponent<ProximityController>().EnableProximity(3f, playerObj.transform);
 
             

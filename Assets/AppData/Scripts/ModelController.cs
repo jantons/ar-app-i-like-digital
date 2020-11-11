@@ -19,7 +19,7 @@ namespace ARExample
         bool isTurn = false;
         public bool Turn { get => isTurn; }
         OSC_StreamingController oscController;
-        
+        StateStreamOutlet osc_stateStreamOutlet;
 
         // Start is called before the first frame update
         void Start()
@@ -30,7 +30,9 @@ namespace ARExample
             SessionEvents.instance.onSafeZoneTriggered += invokeOnSafeRegion;
             SessionEvents.instance.onFollowTriggered += invokeOnFollow;
             SessionEvents.instance.onUnFollowTriggered += invokeOnUnFollow;
+
             oscController = OSC_StreamingController.instance;
+            osc_stateStreamOutlet = StateStreamOutlet.instance;
         }
 
         // Update is called once per frame
@@ -47,11 +49,11 @@ namespace ARExample
 
                     if (Vector3.Dot(toTarget, transform.forward) > 0)
                     {
-                        Debug.Log("Target is in front of this game object.");
+                       // Debug.Log("Target is in front of this game object.");
                     }
                     else
                     {
-                        Debug.Log("Target is not in front of this game object.");
+                       // Debug.Log("Target is not in front of this game object.");
                     }
                     myAnimator.SetFloat("BlendY", 1f);
                 }
@@ -64,7 +66,6 @@ namespace ARExample
                     StartCoroutine(resetCheckTurn(.25f));
                 }
             }
-            oscController.SendLocation_XZ(transform.position.x, transform.position.z);
         }
 
         IEnumerator resetCheckTurn(float delay)
@@ -153,6 +154,16 @@ namespace ARExample
             else
                 return 0f;
         }
+        string getCurrentAnimName()
+        {
+            //Fetch the current Animation clip information for the base layer
+            m_CurrentClipInfo = this.myAnimator.GetCurrentAnimatorClipInfo(0);
+            if (m_CurrentClipInfo.Length > 0)
+                //Access the current length of the clip
+                return m_CurrentClipInfo[0].clip.name;
+            else
+                return "";
+        }
 
         IEnumerator resetFlag(float delay, string flag)
         {
@@ -180,59 +191,67 @@ namespace ARExample
             }
         }
 
-        public void OnReceivePush15(OscMessage message)
+        public void OnReceivePush1(OscMessage message)
         {
             myAnimator.SetBool("isAuto", true);
             myAnimator.StopPlayback();
-            myAnimator.Play("state1", -1, 0);
-            Debug.Log(message.GetFloat(0));
+            myAnimator.Play("state10", -1, 0);
+
+            Debug.Log("Pressed"+message.GetFloat(0));
         }
-        public void OnReceiveStop1(OscMessage message)
+        public void OnReceiveStop10(OscMessage message)
         {
             myAnimator.SetBool("isAuto", false);
+
             myAnimator.StopPlayback();
-            myAnimator.Play("state1", -1, 0);
+            myAnimator.Play("state10", -1, 0);
+
             Debug.Log(message.GetFloat(0));
         }
 
-        public void OnReceiveStop2(OscMessage message)
+        public void OnReceiveStop11(OscMessage message)
         {
             myAnimator.SetBool("isAuto", false);
+
             myAnimator.StopPlayback();
-            myAnimator.Play("state2", -1, 0);
+            osc_stateStreamOutlet.streamStateEnd();
+            myAnimator.Play("state11", -1, 0);
+
             Debug.Log(message.GetFloat(0));
         }
 
-        public void OnReceiveStop3(OscMessage message)
+        public void OnReceiveStop12(OscMessage message)
         {
             myAnimator.SetBool("isAuto", false);
+
             myAnimator.StopPlayback();
-            myAnimator.Play("state3", -1, 0);
+            osc_stateStreamOutlet.streamStateEnd();
+            myAnimator.Play("state12", -1, 0);
+
             Debug.Log(message.GetFloat(0));
         }
 
-        public void OnReceiveStop4(OscMessage message)
+        public void OnReceiveStop13(OscMessage message)
         {
             myAnimator.SetBool("isAuto", false);
+
             myAnimator.StopPlayback();
-            myAnimator.Play("state4", -1, 0);
+            osc_stateStreamOutlet.streamStateEnd();
+            myAnimator.Play("state13", -1, 0);
+
             Debug.Log(message.GetFloat(0));
         }
 
-        public void OnReceiveStop5(OscMessage message)
+        public void OnReceiveStop14(OscMessage message)
         {
             myAnimator.SetBool("isAuto", false);
+
             myAnimator.StopPlayback();
-            myAnimator.Play("state5", -1, 0);
+            osc_stateStreamOutlet.streamStateEnd();
+            myAnimator.Play("state14", -1, 0);
+
             Debug.Log(message.GetFloat(0));
         }
 
-        public void OnReceiveStop6(OscMessage message)
-        {
-            myAnimator.SetBool("isAuto", false);
-            myAnimator.StopPlayback();
-            myAnimator.Play("state6", -1, 0);
-            Debug.Log(message.GetFloat(0));
-        }
     }
 }
