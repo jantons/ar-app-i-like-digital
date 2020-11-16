@@ -8,16 +8,22 @@ namespace ARExample
     {
         public static StateStreamOutlet instance;
         [SerializeField] float refreshRate = 0.1f;
-        [SerializeField] List<string> animStates;
-        [SerializeField] List<float> animLength;
+
         string c_state;
         OSC_StreamingController osc_StreamingController;
-        AnimatorClipInfo[] m_CurrentClipInfo;
+       
 
         void Start()
         {
             osc_StreamingController = OSC_StreamingController.instance;
 
+        }
+
+        void AnimationDetails()
+        {
+            //[SerializeField] List<string> animStates;
+            //[SerializeField] List<float> animLength;
+            //AnimatorClipInfo[] m_CurrentClipInfo;
             //anim = gameObject.GetComponent<Animator>();
             //AnimationClip[] animationClips = anim.runtimeAnimatorController.animationClips;
             //// Iterate over the clips and gather their information
@@ -26,8 +32,6 @@ namespace ARExample
             //    animStates.Add(animClip.name);
             //    animLength.Add(animClip.length);
             //}
-
-
         }
         void Awake()
         {

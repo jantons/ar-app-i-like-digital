@@ -26,7 +26,7 @@ namespace ARExample
         public float DangerZone { get => dangerZone; set => dangerZone = value; }
         public bool Assis_follow { get => assis_follow; set => assis_follow = value; }
 
-        OSC_StreamingController oscController;
+        OSC_StreamingController osc_StreamingController;
         StateStreamOutlet osc_stateStreamOutlet;
 
         float limit_X, limit_Z;
@@ -49,13 +49,12 @@ namespace ARExample
             SessionEvents.instance.onFollowTriggered += invokeOnFollow;
             SessionEvents.instance.onUnFollowTriggered += invokeOnUnFollow;
 
-            oscController = OSC_StreamingController.instance;
+            osc_StreamingController = OSC_StreamingController.instance;
             osc_stateStreamOutlet = StateStreamOutlet.instance;
 
             // Get boundaries
             limit_X = ARManager.Instance.R_width_X;
             limit_Z = ARManager.Instance.R_length_Z;
-
         }
 
         // Update is called once per frame
@@ -63,18 +62,20 @@ namespace ARExample
         {
             if (isActive)
             {
-                //PositionEstimation();
-            }
-
-            if (isActive)
-            {
  
                 if (!checkBoundary())
                 {
                     setModelIdle();
                 }
+
+                // Stream Position
+
+                osc_StreamingController.StreamMessage("/PhonelocationX/", transform.position.x);
+                osc_StreamingController.StreamMessage("/PhonelocationZ/", transform.position.z);
+                osc_StreamingController.StreamMessage("/Distance/", Vector3.Distance(Camera.main.transform.position,transform.position));
             }
         }
+
         void setModelIdle()
         {
             // Set idle
