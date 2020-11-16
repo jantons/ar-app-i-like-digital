@@ -18,8 +18,26 @@ namespace ARExample
         bool CheckTurn = true;
         bool isTurn = false;
         public bool Turn { get => isTurn; }
+        /// <summary>
+        /// assis_follow : True = Follow user and maintain safe distance and viceversa
+        /// </summary>
+        bool assis_follow = false;
+        public float SafeZoneLimit { get => safeZone; set => safeZone = value; }
+        public float DangerZone { get => dangerZone; set => dangerZone = value; }
+        public bool Assis_follow { get => assis_follow; set => assis_follow = value; }
+
         OSC_StreamingController oscController;
         StateStreamOutlet osc_stateStreamOutlet;
+
+        float limit_X, limit_Z;
+        [SerializeField] float safeZone = 2f;
+        [SerializeField] float dangerZone = 1f;
+        [SerializeField] float startfollowLimit = 4f;
+        [SerializeField] float stopfollowLimit = 3f;
+
+
+
+
 
         // Start is called before the first frame update
         void Start()
@@ -33,6 +51,11 @@ namespace ARExample
 
             oscController = OSC_StreamingController.instance;
             osc_stateStreamOutlet = StateStreamOutlet.instance;
+
+            // Get boundaries
+            limit_X = ARManager.Instance.R_width_X;
+            limit_Z = ARManager.Instance.R_length_Z;
+
         }
 
         // Update is called once per frame
@@ -40,31 +63,99 @@ namespace ARExample
         {
             if (isActive)
             {
-                Vector3 heading = refPlayerTrans.position - transform.position;
-                dirNum = AngleDir(transform.forward, heading, transform.up);
+                //PositionEstimation();
+            }
 
-                if (isFollow)
+            if (isActive)
+            {
+ 
+                if (!checkBoundary())
                 {
-                    Vector3 toTarget = (refPlayerTrans.position - transform.position).normalized;
-
-                    if (Vector3.Dot(toTarget, transform.forward) > 0)
-                    {
-                       // Debug.Log("Target is in front of this game object.");
-                    }
-                    else
-                    {
-                       // Debug.Log("Target is not in front of this game object.");
-                    }
-                    myAnimator.SetFloat("BlendY", 1f);
+                    setModelIdle();
                 }
+            }
+        }
+        void setModelIdle()
+        {
+            // Set idle
+                myAnimator.SetBool("isAttack", false);
+                myAnimator.SetFloat("BlendX", 0f);
+                myAnimator.SetFloat("BlendY", 0f);
+                resetPosition();
+            RotateToCamera();
+                myAnimator.Play("RestState", -1, 0);
+            Debug.Log("ResetPosition");
+        }
 
-                if (CheckTurn)
+        void resetPosition()
+        {
+            if (transform.position.x > 0) // Ist or IV qd, 
+            {
+                if (transform.position.z > 0)
                 {
-                    CheckTurn = false;
-                    CheckDirection();
-                    StopCoroutine("resetCheckTurn");
-                    StartCoroutine(resetCheckTurn(.25f));
+                    //Ist qd
+                    transform.position = new Vector3(SafeZoneLimit, transform.position.y, SafeZoneLimit);
                 }
+                else
+                {
+                    //IV qd
+                    transform.position = new Vector3(SafeZoneLimit, transform.position.y, -SafeZoneLimit);
+                }
+            }
+            else
+            {
+                if (transform.position.z > 0)
+                {
+                    //II qd
+                    transform.position = new Vector3(-SafeZoneLimit, transform.position.y, SafeZoneLimit);
+                }
+                else
+                {
+                    //III qd
+                    transform.position = new Vector3(-SafeZoneLimit, transform.position.y, -SafeZoneLimit);
+                }
+            }
+        }
+        public void RotateToCamera()
+        {
+            Vector3 targetPostition = new Vector3(Camera.main.transform.position.x,
+                                       this.transform.position.y,
+                                       Camera.main.transform.position.z);
+            this.transform.LookAt(targetPostition);
+        }
+        bool checkBoundary()
+        {
+            if (Mathf.Abs(transform.position.x) < limit_X && Mathf.Abs(transform.position.z) < limit_Z)
+                return true;
+            else
+                return false;
+        }
+        private void PositionEstimation()
+        {
+            Vector3 heading = refPlayerTrans.position - transform.position;
+            dirNum = AngleDir(transform.forward, heading, transform.up);
+
+            if (isFollow)
+            {
+                Vector3 toTarget = (refPlayerTrans.position - transform.position).normalized;
+
+                if (Vector3.Dot(toTarget, transform.forward) > 0)
+                {
+                    // Debug.Log("Target is in front of this game object.");
+                }
+                else
+                {
+                    // Debug.Log("Target is not in front of this game object.");
+                }
+                myAnimator.SetFloat("BlendY", 1f);
+            }
+
+            if (CheckTurn)
+            {
+                CheckTurn = false;
+                CheckDirection();
+                StopCoroutine("resetCheckTurn");
+                StartCoroutine(resetCheckTurn(.25f));
             }
         }
 
