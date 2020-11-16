@@ -20,12 +20,22 @@ namespace ARExample
 
         public myAnimator C_ModelAnimator { get => onScreenModel.GetComponent<myAnimator>(); }
 
+
         public static ARManager Instance;
 
         [SerializeField] GameObject findPlane;
         OSC_StreamingController osc_Controller;
         Transform spawnTransform;
         float floorLevel;
+
+        #region Environment Boundaries
+        [Header("Room Scale")]
+        [SerializeField] float r_width_X;
+        [SerializeField] float r_length_Z;
+        public float R_width_X { get => r_width_X; set => r_width_X = value; }
+        public float R_length_Z { get => r_length_Z; set => r_length_Z = value; }
+
+        #endregion
 
         #region Initialization
         void Awake()
@@ -116,6 +126,9 @@ namespace ARExample
             spawnTransform.position = new Vector3(0, floorLevel, -3);
             InstantiateModel(spawnTransform);
         }
+
+
+
         public void InstantiateModel(Transform spawnReference)
         {
             onScreenModel = Instantiate(GetARModel(), spawnReference.position, Quaternion.identity);
