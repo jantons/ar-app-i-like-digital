@@ -9,12 +9,19 @@ namespace ARExample
         public Transform GetPlayerTrans { get => playerTrans; }
         public bool proximitySensor;
 
-        [SerializeField] float safeZoneLimit = 1f;
+        float safeZoneLimit;
         [SerializeField] float startfollowLimit = 4f;
         [SerializeField] float stopfollowLimit = 3f;
+        bool assis_follow;
 
         bool isNotified = false;
-
+        private void Start()
+        {
+            var modelController = gameObject.GetComponent<ModelController>();
+            safeZoneLimit = modelController.SafeZoneLimit;
+            assis_follow = modelController.Assis_follow;
+            
+        }
         // Update is called once per frame
         void FixedUpdate()
         {
@@ -33,16 +40,17 @@ namespace ARExample
                     SessionEvents.instance.SafeZoneTriggere();
                 }
                 // Follow and Unfollow
-
-                if (dist > startfollowLimit && dist > stopfollowLimit)
+                if (assis_follow)
                 {
-                    SessionEvents.instance.FollowTriggered();
+                    if (dist > startfollowLimit && dist > stopfollowLimit)
+                    {
+                        SessionEvents.instance.FollowTriggered();
+                    }
+                    else
+                    {
+                        SessionEvents.instance.UnFollowTriggered();
+                    }
                 }
-                else
-                {
-                    SessionEvents.instance.UnFollowTriggered();
-                }
-
             }
 
         }
