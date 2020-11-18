@@ -3036,7 +3036,6 @@ GameObject:
   - component: {fileID: 762671673}
   - component: {fileID: 762671672}
   - component: {fileID: 762671676}
-  - component: {fileID: 762671669}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Player
@@ -3044,18 +3043,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &762671669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 762671668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9af605a2d82df4d0c892276bf02d853e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &762671672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5989,13 +5976,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1afe545a1d0f94c218cce256eef0ef16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onScreenModel: {fileID: 0}
+  spawnTransform: {fileID: 0}
   ARModel:
   - {fileID: 6657886114471451424, guid: 416c13ae430b54e87b515952767bd203, type: 3}
   - {fileID: 5062623171420547260, guid: 0316ae610fabe44df9176e29e97261a1, type: 3}
   - {fileID: 2777655291937489599, guid: 76a943008a07e41ff8486bbf3c5c086d, type: 3}
   - {fileID: 6403473617257295635, guid: ac7b0668eaaf1493eb3d349be7f0c20c, type: 3}
-  findPlane: {fileID: 1946201812}
+  r_width_X: 0
+  r_length_Z: 0
+  r_floor_Y: 0
 --- !u!4 &1665564390
 Transform:
   m_ObjectHideFlags: 0

@@ -9,7 +9,6 @@ namespace UnityEngine.XR.ARFoundation.Samples
 {
     public class InputSystem_PlaceOnPlane : MonoBehaviour
     {
-        ARManager arManager;
         [SerializeField] GameObject refObject;
 
         /// <summary>
@@ -20,7 +19,6 @@ namespace UnityEngine.XR.ARFoundation.Samples
         void Awake()
         {
             m_RaycastManager = GetComponent<ARRaycastManager>();
-            arManager = GameObject.Find("ARManager").GetComponent<ARManager>();
         }
 
         public void AddObject(InputAction.CallbackContext context)
@@ -36,9 +34,6 @@ namespace UnityEngine.XR.ARFoundation.Samples
                 {
                     //spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
                    // spawnedObject = Instantiate(arManager.GetARModel(), hitPose.position, hitPose.rotation);
-                    spawnedObject = Instantiate(refObject, hitPose.position, hitPose.rotation);
-
-                    arManager.InstantiateModel(spawnedObject.transform);
 
                 }
             }
