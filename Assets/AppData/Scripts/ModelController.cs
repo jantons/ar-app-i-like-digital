@@ -35,10 +35,6 @@ namespace ARExample
         [SerializeField] float startfollowLimit = 4f;
         [SerializeField] float stopfollowLimit = 3f;
 
-
-
-
-
         // Start is called before the first frame update
         void Start()
         {

@@ -8,12 +8,14 @@ namespace ARExample
     public class ARManager : MonoBehaviour
     {
         public static ARManager Instance;
-        [SerializeField] Transform spawnTransform; // Position where model has to be spawned
+        
         int modelLevel = 0;
         GameObject onScreenModel;
         GameObject playerObj;
         [SerializeField] GameObject[] ARModel;
         public GameObject Player { get => playerObj; }
+
+        Vector3 anchorPosition;
 
         public int ModelLevel { get => modelLevel; set => modelLevel = value; }
 
@@ -25,12 +27,11 @@ namespace ARExample
 
         #region Environment Boundaries
         [Header("Room Scale")]
-        [SerializeField] float r_width_X;
-        [SerializeField] float r_length_Z;
-        [SerializeField] float r_floor_Y;
+         float r_width_X, r_length_Z;
         public float R_width_X { get => r_width_X; set => r_width_X = value; }
         public float R_length_Z { get => r_length_Z; set => r_length_Z = value; }
-        public float R_floor_Y { get => r_floor_Y; set => r_floor_Y = value; }
+        public Vector3 AnchorPosition { get => anchorPosition; set => anchorPosition = value; }
+
 
         #endregion
 
@@ -68,6 +69,7 @@ namespace ARExample
         #region Initialization
         void Awake()
         {
+            anchorPosition = Vector3.zero;
             if (Instance != null)
             {
                 GameObject.Destroy(Instance);
@@ -81,7 +83,7 @@ namespace ARExample
         }
         #endregion
 
-        private void Start()
+        public void LoadShow()
         {
             GetConfigurations();
            
@@ -96,9 +98,8 @@ namespace ARExample
         }
         public void InstantiateModel()
         {
-            spawnTransform.position =  new Vector3(spawnTransform.position.x, R_floor_Y, spawnTransform.position.z);
 
-            onScreenModel= Instantiate(GetCharacterModel(0),spawnTransform.position,spawnTransform.rotation);
+            onScreenModel= Instantiate(GetCharacterModel(0),anchorPosition, Quaternion.Euler(0, 0, 0));
             
             onScreenModel.GetComponent<ModelController>().RotateToCamera();
 
@@ -114,8 +115,8 @@ namespace ARExample
         {
             R_width_X = PlayerPrefs.GetFloat("room_Width");
             R_length_Z = PlayerPrefs.GetFloat("room_Length");
-            R_floor_Y = PlayerPrefs.GetFloat("room_floor");
         }
+       
 
     }
 }
