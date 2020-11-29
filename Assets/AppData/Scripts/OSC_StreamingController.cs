@@ -8,6 +8,7 @@ public class OSC_StreamingController:MonoBehaviour
     ModelController m_Controller;
     public ModelController M_Controller_Instance { set => m_Controller = value; }
 
+    [SerializeField]PropController propController;
     PositionStreamOutlet osc_PositionStreamOutlet;
     StateStreamOutlet osc_StateStreamOutlet;
     // Start is called before the first frame update
@@ -34,6 +35,8 @@ public class OSC_StreamingController:MonoBehaviour
         osc.SetAddressHandler("/1/stop3", m_Controller.OnReceiveStop12);
         osc.SetAddressHandler("/1/stop4", m_Controller.OnReceiveStop13);
         osc.SetAddressHandler("/1/stop5", m_Controller.OnReceiveStop14);
+
+        osc.SetAddressHandler("/1/prop",propController.onReceivePropInvoke );
 
         osc_PositionStreamOutlet = m_Controller.GetComponent<PositionStreamOutlet>();
         osc_StateStreamOutlet = m_Controller.GetComponent<StateStreamOutlet>();
