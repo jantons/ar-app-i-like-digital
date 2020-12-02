@@ -14,18 +14,21 @@ public class PropController : MonoBehaviour
     }
     public void onReceivePropInvoke(OscMessage message)
     {
-        if (!isActive)
+        if (message.GetFloat(0) == 1)
         {
-            isActive = true;
-            prop.transform.position = new Vector3(prop.transform.position.x,
-                                                    _arManager.AnchorPosition.y,
-                                                    prop.transform.position.z) ;
-            prop.SetActive(true);
-        }
-        else
-        {
-            isActive = false;
-            prop.SetActive(false);
+            if (!isActive)
+            {
+                isActive = true;
+                prop.transform.position = new Vector3(prop.transform.position.x,
+                                                        _arManager.AnchorPosition.y,
+                                                        prop.transform.position.z);
+                prop.SetActive(true);
+            }
+            else
+            {
+                isActive = false;
+                prop.SetActive(false);
+            }
         }
     }
 }

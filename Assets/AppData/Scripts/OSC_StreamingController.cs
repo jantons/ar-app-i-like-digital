@@ -27,16 +27,18 @@ public class OSC_StreamingController:MonoBehaviour
     }
     public void Init()
     {
+        Debug.Log("Init");
 
-        osc.SetAddressHandler("/1/push15", m_Controller.OnReceivePush1);
+        osc.SetAddressHandler("/action/auto", m_Controller.OnReceiveAction_Auto);
 
-        osc.SetAddressHandler("/1/stop1", m_Controller.OnReceiveStop10);
-        osc.SetAddressHandler("/1/stop2", m_Controller.OnReceiveStop11);
-        osc.SetAddressHandler("/1/stop3", m_Controller.OnReceiveStop12);
-        osc.SetAddressHandler("/1/stop4", m_Controller.OnReceiveStop13);
-        osc.SetAddressHandler("/1/stop5", m_Controller.OnReceiveStop14);
+        osc.SetAddressHandler("/state/1", m_Controller.OnReceiveState_1);
+        osc.SetAddressHandler("/state/2", m_Controller.OnReceiveState_2);
+        osc.SetAddressHandler("/state/3", m_Controller.OnReceiveState_3);
+        osc.SetAddressHandler("/state/4", m_Controller.OnReceiveState_4);
+        osc.SetAddressHandler("/state/5", m_Controller.OnReceiveState_5);
 
-        osc.SetAddressHandler("/1/prop",propController.onReceivePropInvoke );
+       osc.SetAddressHandler("/action/prop",propController.onReceivePropInvoke );
+       //osc.SetAddressHandler("/action/prop", printme);
 
         osc_PositionStreamOutlet = m_Controller.GetComponent<PositionStreamOutlet>();
         osc_StateStreamOutlet = m_Controller.GetComponent<StateStreamOutlet>();
@@ -44,7 +46,13 @@ public class OSC_StreamingController:MonoBehaviour
        osc_PositionStreamOutlet.init();
     }
 
-
+    void printme(OscMessage message)
+    {
+        if (message.GetFloat(0) == 1)
+        {
+            Debug.Log("Hi");
+        }
+    }
     public void SendLocation_XZ(float position_X, float position_Z)
     {
         OscMessage message;
