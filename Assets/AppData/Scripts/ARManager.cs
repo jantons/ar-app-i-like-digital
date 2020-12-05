@@ -16,6 +16,7 @@ namespace ARExample
         public GameObject Player { get => playerObj; }
 
         Vector3 anchorPosition;
+        OSC_Receive OSC_Receive;
 
         public int ModelLevel { get => modelLevel; set => modelLevel = value; }
 
@@ -23,7 +24,6 @@ namespace ARExample
 
         public myAnimator C_ModelAnimator { get => onScreenModel.GetComponent<myAnimator>(); }
 
-        OSC_StreamingController osc_Controller;
 
         #region Environment Boundaries
         [Header("Room Scale")]
@@ -81,6 +81,10 @@ namespace ARExample
             }
             playerObj = GameObject.FindGameObjectWithTag("Player");
         }
+        private void Start()
+        {
+            OSC_Receive = OSC_Receive.Instance;
+        }
         #endregion
 
         public void LoadShow()
@@ -104,9 +108,9 @@ namespace ARExample
             onScreenModel.GetComponent<ModelController>().RotateToCamera();
 
             #region OSC
-            osc_Controller = OSC_StreamingController.instance;
-            osc_Controller.M_Controller_Instance = onScreenModel.GetComponent<ModelController>();
-            osc_Controller.Init();
+            OSC_Receive.ModelController = onScreenModel.GetComponent<ModelController>();
+            onScreenModel.GetComponent<PositionStreamOutlet>().init();
+
             #endregion
 
             onScreenModel.GetComponent<ProximityController>().EnableProximity(3f, playerObj.transform);

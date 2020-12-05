@@ -10,13 +10,12 @@ namespace ARExample
         [SerializeField] float refreshRate = 0.1f;
 
         string c_state;
-        OSC_StreamingController osc_StreamingController;
+        OSC_Send osc_StreamingController;
        
 
         void Start()
         {
-            osc_StreamingController = OSC_StreamingController.instance;
-
+            osc_StreamingController = OSC_Send.Instance;
         }
 
         void Awake()

@@ -12,10 +12,9 @@ public class PropController : MonoBehaviour
     {
         _arManager = ARManager.Instance;
     }
-    public void onReceivePropInvoke(OscMessage message)
+    public void onReceivePropInvoke()
     {
-        if (message.GetFloat(0) == 1)
-        {
+
             if (!isActive)
             {
                 isActive = true;
@@ -29,6 +28,5 @@ public class PropController : MonoBehaviour
                 isActive = false;
                 prop.SetActive(false);
             }
-        }
     }
 }

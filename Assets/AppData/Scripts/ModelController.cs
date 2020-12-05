@@ -26,7 +26,7 @@ namespace ARExample
         public float DangerZone { get => dangerZone; set => dangerZone = value; }
         public bool Assis_follow { get => assis_follow; set => assis_follow = value; }
 
-        OSC_StreamingController osc_StreamingController;
+        OSC_Send osc_OutletStreamingController;
         StateStreamOutlet osc_stateStreamOutlet;
 
         float limit_X, limit_Z;
@@ -34,6 +34,8 @@ namespace ARExample
         [SerializeField] float dangerZone = 1f;
         [SerializeField] float startfollowLimit = 4f;
         [SerializeField] float stopfollowLimit = 3f;
+
+        ARManager _arManager;
 
         // Start is called before the first frame update
         void Start()
@@ -45,12 +47,14 @@ namespace ARExample
             SessionEvents.instance.onFollowTriggered += invokeOnFollow;
             SessionEvents.instance.onUnFollowTriggered += invokeOnUnFollow;
 
-            osc_StreamingController = OSC_StreamingController.instance;
+            osc_OutletStreamingController = OSC_Send.Instance;
             osc_stateStreamOutlet = StateStreamOutlet.instance;
 
             // Get boundaries
             limit_X = ARManager.Instance.R_width_X;
             limit_Z = ARManager.Instance.R_length_Z;
+
+            _arManager = ARManager.Instance;
         }
 
         // Update is called once per frame
@@ -65,10 +69,12 @@ namespace ARExample
                 }
 
                 // Stream Position
+                osc_OutletStreamingController.StreamMessage("/locationX/", transform.position.x);
+                osc_OutletStreamingController.StreamMessage("/locationZ/", transform.position.z);
 
-                osc_StreamingController.StreamMessage("/PhonelocationX/", transform.position.x);
-                osc_StreamingController.StreamMessage("/PhonelocationZ/", transform.position.z);
-                osc_StreamingController.StreamMessage("/Distance/", Vector3.Distance(Camera.main.transform.position,transform.position));
+                osc_OutletStreamingController.StreamMessage("/PhonelocationX/", _arManager.Player.transform.position.x);
+                osc_OutletStreamingController.StreamMessage("/PhonelocationZ/", _arManager.Player.transform.position.z);
+                osc_OutletStreamingController.StreamMessage("/Distance/", Vector3.Distance(Camera.main.transform.position,transform.position));
             }
         }
 
@@ -279,71 +285,63 @@ namespace ARExample
             }
         }
 
-        public void OnReceiveAction_Auto(OscMessage message)
+        public void OnReceiveAction_Auto()
         {
-            if (message.GetFloat(0) == 1)
-            {
                 myAnimator.SetBool("isAuto", true);
                 myAnimator.StopPlayback();
                 myAnimator.Play("state1", -1, 0);
-            }
         }
-        public void OnReceiveState_1(OscMessage message)
+        public void OnReceiveState_1()
         {
-            if (message.GetFloat(0) == 1)
-            {
+
                 myAnimator.SetBool("isAuto", false);
                 myAnimator.StopPlayback();
                 myAnimator.Play("state1", -1, 0);
-            }
+
         }
 
-        public void OnReceiveState_2(OscMessage message)
+        public void OnReceiveState_2()
         {
-            if (message.GetFloat(0) == 1)
-            {
+
                 myAnimator.SetBool("isAuto", false);
 
                 myAnimator.StopPlayback();
                 osc_stateStreamOutlet.streamStateEnd();
                 myAnimator.Play("state2", -1, 0);
-            }
+
         }
 
-        public void OnReceiveState_3(OscMessage message)
+        public void OnReceiveState_3()
         {
-            if (message.GetFloat(0) == 1)
-            {
+
                 myAnimator.SetBool("isAuto", false);
 
                 myAnimator.StopPlayback();
                 osc_stateStreamOutlet.streamStateEnd();
                 myAnimator.Play("state3", -1, 0);
-            }
+            
         }
 
-        public void OnReceiveState_4(OscMessage message)
+        public void OnReceiveState_4()
         {
-            if (message.GetFloat(0) == 1)
-            {
+
                 myAnimator.SetBool("isAuto", false);
 
                 myAnimator.StopPlayback();
                 osc_stateStreamOutlet.streamStateEnd();
                 myAnimator.Play("state4", -1, 0);
-            }
+           
         }
 
-        public void OnReceiveState_5(OscMessage message)
+        public void OnReceiveState_5()
         {
-            if (message.GetFloat(0) == 1)
-            {
+
                 myAnimator.SetBool("isAuto", false);
 
                 myAnimator.StopPlayback();
                 osc_stateStreamOutlet.streamStateEnd();
                 myAnimator.Play("state5", -1, 0);
-            }
+
         }
 
     }

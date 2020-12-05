@@ -405,11 +405,12 @@ public class UDPPacketIO
   public class OSC : MonoBehaviour
   {
 
-    public int inPort  = 6969;
-    public string outIP = "127.0.0.1";
-    public int outPort  = 6161;
+    private int inPort = 8000;
+    [SerializeField] string outIP = "192.168.178.40";
+    private int outPort = 9000;
+    bool isActive=false;
 
-      private UDPPacketIO OscPacketIO;
+    private UDPPacketIO OscPacketIO;
       Thread ReadThread;
 	  private bool ReaderRunning;
       private OscMessageHandler AllMessageHandler;
@@ -424,9 +425,13 @@ public class UDPPacketIO
 
 	bool paused = false;
 
+    public string OutIP { get => outIP; set => outIP = value; }
+    public int OutPort { get => outPort; set => outPort = value; }
+    public int InPort { get => inPort; set => inPort = value; }
+
 
 #if UNITY_EDITOR
-    
+
     private void HandleOnPlayModeChanged(UnityEditor.PlayModeStateChange state) //FIX FOR UNITY POST 2017
     {
 		// This method is run whenever the playmode state is changed.
@@ -438,13 +443,33 @@ public class UDPPacketIO
 		
 	}
 #endif
+    private void Awake()
+    {
+        OscPacketIO = new UDPPacketIO(OutIP, OutPort, InPort);
+        AddressTable = new Hashtable();
+
+        messagesReceived = new ArrayList();
+
+        buffer = new byte[1000];
 
 
+        ReadThread = new Thread(Read);
+        ReaderRunning = true;
+        ReadThread.IsBackground = true;
+        ReadThread.Start();
 
-    void Awake() {
-		//print("Opening OSC listener on port " + inPort);
+#if UNITY_EDITOR
+        //UnityEditor.EditorApplication.playmodeStateChanged = HandleOnPlayModeChanged;
+        UnityEditor.EditorApplication.playModeStateChanged += HandleOnPlayModeChanged;  //FIX FOR UNITY POST 2017
+#endif
+    }
 
-		OscPacketIO = new UDPPacketIO(outIP, outPort, inPort);
+
+   public void inIT(string ip) {
+        //print("Opening OSC listener on port " + inPort);
+        OutIP = ip;
+
+		OscPacketIO = new UDPPacketIO(OutIP, OutPort, InPort);
 		AddressTable = new Hashtable();
 
 		messagesReceived = new ArrayList();
@@ -503,31 +528,33 @@ public class UDPPacketIO
 	}
 
 
-	void Update() {
+	void Update()
+    {
 
+    if (messagesReceived.Count > 0)
+            {
+                //Debug.Log("received " + messagesReceived.Count + " messages");
+                lock (ReadThreadLock)
+                {
+                    foreach (OscMessage om in messagesReceived)
+                    {
 
-		if ( messagesReceived.Count > 0 ) {
-			//Debug.Log("received " + messagesReceived.Count + " messages");
-			lock(ReadThreadLock) {
-				foreach (OscMessage om in messagesReceived)
-				{
+                        if (AllMessageHandler != null)
+                            AllMessageHandler(om);
 
-					if (AllMessageHandler != null)
-						AllMessageHandler(om);
+                        ArrayList al = (ArrayList)Hashtable.Synchronized(AddressTable)[om.address];
+                        if (al != null)
+                        {
+                            foreach (OscMessageHandler h in al)
+                            {
+                                h(om);
+                            }
+                        }
 
-					ArrayList al = (ArrayList)Hashtable.Synchronized(AddressTable)[om.address];
-					if ( al != null) {
-						foreach (OscMessageHandler h in al) {
-							h(om);
-						}
-					}
-
-				}
-				messagesReceived.Clear();
-			}
-		}
-
-
+                    }
+                    messagesReceived.Clear();
+                }
+            }
 
 
 	}

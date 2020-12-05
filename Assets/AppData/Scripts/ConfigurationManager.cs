@@ -20,11 +20,13 @@ namespace ARExample
         [SerializeField] GameObject CallibrationUI;
         [SerializeField] TMP_InputField length_input;
         [SerializeField] TMP_InputField width_input;
+        [SerializeField] TMP_InputField outIP;
         float floor_level;
 
         #endregion
         TapToPlace tapToPlace;
         ARManager _arManager;
+        [SerializeField]OSC_Adapter _oscAdpater;
 
         float room_Width, room_Length;
 
@@ -43,12 +45,26 @@ namespace ARExample
             CallibrationUI.SetActive(false);
             ConfigurationUI.SetActive(true);
             tapToPlace.SaveSpawnPosition();
+
+            //OSC Host IP
+            if (outIP.text.Equals(""))
+            {
+                _oscAdpater.InIt("127.0.0.1");
+            }
+            else
+            {
+                outIP.text = "192.168.178.40";
+                _oscAdpater.InIt(outIP.text);
+            }
+            PlayerPrefs.SetString("outIP", outIP.text);
+
         }
         void onLoadScene_Btn_Invoke()
         {
             ConfigurationUI.SetActive(false);
             tapToPlace.SaveSpawnPosition();
             _arManager.LoadShow();
+
         }
         private void Awake()
         {
