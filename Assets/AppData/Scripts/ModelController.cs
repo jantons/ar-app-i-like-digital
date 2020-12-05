@@ -72,8 +72,10 @@ namespace ARExample
                 osc_OutletStreamingController.StreamMessage("/locationX/", transform.position.x);
                 osc_OutletStreamingController.StreamMessage("/locationZ/", transform.position.z);
 
-                osc_OutletStreamingController.StreamMessage("/PhonelocationX/", _arManager.Player.transform.position.x);
-                osc_OutletStreamingController.StreamMessage("/PhonelocationZ/", _arManager.Player.transform.position.z);
+                // osc_OutletStreamingController.StreamMessage("/PhonelocationX/", _arManager.Player.transform.position.x);
+                // osc_OutletStreamingController.StreamMessage("/PhonelocationZ/", _arManager.Player.transform.position.z);
+                osc_OutletStreamingController.StreamMessage("/PhonelocationX/", Camera.main.transform.position.x);
+                osc_OutletStreamingController.StreamMessage("/PhonelocationZ/", Camera.main.transform.position.z);
                 osc_OutletStreamingController.StreamMessage("/Distance/", Vector3.Distance(Camera.main.transform.position,transform.position));
             }
         }
