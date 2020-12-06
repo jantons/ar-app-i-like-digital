@@ -76,6 +76,9 @@ namespace ARExample
                 // osc_OutletStreamingController.StreamMessage("/PhonelocationZ/", _arManager.Player.transform.position.z);
                 osc_OutletStreamingController.StreamMessage("/PhonelocationX/", Camera.main.transform.position.x);
                 osc_OutletStreamingController.StreamMessage("/PhonelocationZ/", Camera.main.transform.position.z);
+                osc_OutletStreamingController.StreamMessage("/PhoneRotationX/", Camera.main.transform.rotation.x);
+                osc_OutletStreamingController.StreamMessage("/PhoneRotationY/", Camera.main.transform.rotation.y);
+                osc_OutletStreamingController.StreamMessage("/PhoneRotationZ/", Camera.main.transform.rotation.z);
                 osc_OutletStreamingController.StreamMessage("/Distance/", Vector3.Distance(Camera.main.transform.position,transform.position));
             }
         }

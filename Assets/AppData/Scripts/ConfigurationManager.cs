@@ -21,6 +21,7 @@ namespace ARExample
         [SerializeField] TMP_InputField length_input;
         [SerializeField] TMP_InputField width_input;
         [SerializeField] TMP_InputField outIP;
+        [SerializeField] Toggle host;
         float floor_level;
 
         #endregion
@@ -45,23 +46,23 @@ namespace ARExample
             CallibrationUI.SetActive(false);
             ConfigurationUI.SetActive(true);
             tapToPlace.SaveSpawnPosition();
-
-            //OSC Host IP
-            if (outIP.text.Equals(""))
-            {
-                _oscAdpater.InIt("127.0.0.1");
-            }
-            else
-            {
-                outIP.text = "192.168.178.40";
-                _oscAdpater.InIt(outIP.text);
-            }
-            PlayerPrefs.SetString("outIP", outIP.text);
-
         }
         void onLoadScene_Btn_Invoke()
         {
             ConfigurationUI.SetActive(false);
+
+            if (host.isOn)
+            {
+                outIP.text = "192.168.178.34";
+                _oscAdpater.InIt("192.168.178.34");
+            }
+            else
+            {
+                outIP.text = "127.0.0.1";
+                _oscAdpater.InIt("127.0.0.1");
+            }
+            PlayerPrefs.SetString("outIP", outIP.text);
+
             tapToPlace.SaveSpawnPosition();
             _arManager.LoadShow();
 
