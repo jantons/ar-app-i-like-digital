@@ -7,6 +7,7 @@ namespace ARExample
 {
     public class ARManager : MonoBehaviour
     {
+        Model modelType;
         public static ARManager Instance;
         
         int modelLevel = 0;
@@ -31,6 +32,7 @@ namespace ARExample
         public float R_width_X { get => r_width_X; set => r_width_X = value; }
         public float R_length_Z { get => r_length_Z; set => r_length_Z = value; }
         public Vector3 AnchorPosition { get => anchorPosition; set => anchorPosition = value; }
+        public Model ModelType { get => modelType; set => modelType = value; }
 
 
         #endregion
@@ -44,6 +46,33 @@ namespace ARExample
         public GameObject GetCharacterModel()
         {
             return ARModel[modelLevel];
+        }
+        GameObject getModel()
+        {
+            switch (ModelType)
+            {
+                case Model.Wolf:
+                    {
+                        return ARModel[0];
+                        break;
+                    }
+                case Model.Eagle:
+                    {
+                        return ARModel[1];
+                        break;
+                    }
+                case Model.Rabit:
+                    {
+                        return ARModel[2];
+                        break;
+                    }
+
+                default:
+                    {
+                        return ARModel[0];
+                        break;
+                    }
+            }
         }
         public void resetModel()
         {
@@ -84,6 +113,7 @@ namespace ARExample
         private void Start()
         {
             OSC_Receive = OSC_Receive.Instance;
+            ModelType = Model.Wolf;
         }
         #endregion
 
@@ -92,7 +122,6 @@ namespace ARExample
             GetConfigurations();
            
             StartCoroutine("DelayInstantiate");
-
         }
 
         IEnumerator DelayInstantiate()
@@ -103,7 +132,7 @@ namespace ARExample
         public void InstantiateModel()
         {
 
-            onScreenModel= Instantiate(GetCharacterModel(0),anchorPosition, Quaternion.Euler(0, 0, 0));
+            onScreenModel= Instantiate(getModel(),anchorPosition, Quaternion.Euler(0, 0, 0));
             
             onScreenModel.GetComponent<ModelController>().RotateToCamera();
 
@@ -112,15 +141,42 @@ namespace ARExample
             onScreenModel.GetComponent<PositionStreamOutlet>().init();
 
             #endregion
-
-            onScreenModel.GetComponent<ProximityController>().EnableProximity(3f, playerObj.transform);
+            if (ModelType == Model.Wolf)
+            {
+                onScreenModel.GetComponent<ProximityController>().EnableProximity(3f, playerObj.transform);
+            }  
         }
         public void GetConfigurations()
         {
             R_width_X = PlayerPrefs.GetFloat("room_Width");
             R_length_Z = PlayerPrefs.GetFloat("room_Length");
         }
-       
 
+        public void SetModelToUse(Model type)
+        {
+            switch (type)
+            {
+                case Model.Wolf:
+                    {
+                        ModelType = Model.Wolf;
+                        OnScreenModel = ARModel[0];
+                        break;
+                    }
+                case Model.Eagle:
+                    {
+                        ModelType = Model.Eagle;
+                        OnScreenModel = ARModel[1];
+                        break;
+                    }
+                case Model.Rabit:
+                    {
+                        ModelType = Model.Rabit;
+                        OnScreenModel = ARModel[2];
+                        break;
+                    }
+            }
+        }
     }
 }
+public enum Model
+{ Wolf, Eagle, Rabit }

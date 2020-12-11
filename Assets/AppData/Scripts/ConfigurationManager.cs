@@ -16,6 +16,9 @@ namespace ARExample
         [SerializeField] Button save_floorlevel_Btn;
         [SerializeField] Button saveCallibration_Btn;
         [SerializeField] Button loadShow_Btn;
+        [SerializeField] Button wolf_Btn;
+        [SerializeField] Button eagle_Btn;
+        [SerializeField] Button rabit_Btn;
         [SerializeField] GameObject ConfigurationUI;
         [SerializeField] GameObject CallibrationUI;
         [SerializeField] TMP_InputField length_input;
@@ -82,6 +85,9 @@ namespace ARExample
                 save_floorlevel_Btn.onClick.AddListener(() => onSaveSpawnAnchor_Btn_Invoke());
                 saveCallibration_Btn.onClick.AddListener(() => onSave_Btn_Invoke());
                 loadShow_Btn.onClick.AddListener(() => onLoadScene_Btn_Invoke());
+            wolf_Btn.onClick.AddListener(() => modelToUse(Model.Wolf));
+            eagle_Btn.onClick.AddListener(() => modelToUse(Model.Eagle));
+            rabit_Btn.onClick.AddListener(() => modelToUse(Model.Rabit));
         }
         void FetchData()
         {
@@ -110,7 +116,10 @@ namespace ARExample
             Room_Length = PlayerPrefs.GetFloat("room_Length");
         }
 
-
+        void modelToUse(Model modelType)
+        {
+            _arManager.SetModelToUse(modelType);
+        }
     }
 
 }

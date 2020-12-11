@@ -42,6 +42,27 @@ public class TapToPlace : MonoBehaviour
             return false;
         }
     }
+    void getObjectToInstantiate()
+    {
+        switch (_arManager.ModelType)
+        {
+            case Model.Wolf:
+                {
+                    objectToInstantiate = _arManager.GetCharacterModel(0);
+                    break;
+                }
+            case Model.Eagle:
+                {
+                    objectToInstantiate = _arManager.GetCharacterModel(1);
+                    break;
+                }
+            case Model.Rabit:
+                {
+                    objectToInstantiate = _arManager.GetCharacterModel(2);
+                    break;
+                }
+        }
+    }
     // Update is called once per frame
     void Update()
     {

@@ -6,7 +6,7 @@ namespace ARExample
     {
         Animator myAnimator;
         AnimatorClipInfo[] m_CurrentClipInfo;
-        
+
         public float dirNum;
         Transform refPlayerTrans;
 
@@ -62,25 +62,29 @@ namespace ARExample
         {
             if (isActive)
             {
- 
+
                 if (!checkBoundary())
                 {
                     setModelIdle();
                 }
 
-                // Stream Position
-                osc_OutletStreamingController.StreamMessage("/locationX/", transform.position.x);
-                osc_OutletStreamingController.StreamMessage("/locationZ/", transform.position.z);
-
-                // osc_OutletStreamingController.StreamMessage("/PhonelocationX/", _arManager.Player.transform.position.x);
-                // osc_OutletStreamingController.StreamMessage("/PhonelocationZ/", _arManager.Player.transform.position.z);
-                osc_OutletStreamingController.StreamMessage("/PhonelocationX/", Camera.main.transform.position.x);
-                osc_OutletStreamingController.StreamMessage("/PhonelocationZ/", Camera.main.transform.position.z);
-                osc_OutletStreamingController.StreamMessage("/PhoneRotationX/", Camera.main.transform.rotation.x);
-                osc_OutletStreamingController.StreamMessage("/PhoneRotationY/", Camera.main.transform.rotation.y);
-                osc_OutletStreamingController.StreamMessage("/PhoneRotationZ/", Camera.main.transform.rotation.z);
-                osc_OutletStreamingController.StreamMessage("/Distance/", Vector3.Distance(Camera.main.transform.position,transform.position));
+                stram_OSC_Messages();
             }
+        }
+        void stram_OSC_Messages()
+        {
+            // Stream Position
+            osc_OutletStreamingController.StreamMessage("/locationX/", transform.position.x);
+            osc_OutletStreamingController.StreamMessage("/locationZ/", transform.position.z);
+
+            // osc_OutletStreamingController.StreamMessage("/PhonelocationX/", _arManager.Player.transform.position.x);
+            // osc_OutletStreamingController.StreamMessage("/PhonelocationZ/", _arManager.Player.transform.position.z);
+            osc_OutletStreamingController.StreamMessage("/PhonelocationX/", Camera.main.transform.position.x);
+            osc_OutletStreamingController.StreamMessage("/PhonelocationZ/", Camera.main.transform.position.z);
+            osc_OutletStreamingController.StreamMessage("/PhoneRotationX/", Camera.main.transform.rotation.x);
+            osc_OutletStreamingController.StreamMessage("/PhoneRotationY/", Camera.main.transform.rotation.y);
+            osc_OutletStreamingController.StreamMessage("/PhoneRotationZ/", Camera.main.transform.rotation.z);
+            osc_OutletStreamingController.StreamMessage("/Distance/", Vector3.Distance(Camera.main.transform.position, transform.position));
         }
 
         void setModelIdle()
@@ -92,52 +96,10 @@ namespace ARExample
                 resetPosition();
             RotateToCamera();
                 myAnimator.Play("RestState", -1, 0);
-            Debug.Log("ResetPosition");
         }
 
-        void resetPosition()
-        {
-            if (transform.position.x > 0) // Ist or IV qd, 
-            {
-                if (transform.position.z > 0)
-                {
-                    //Ist qd
-                    transform.position = new Vector3(SafeZoneLimit, transform.position.y, SafeZoneLimit);
-                }
-                else
-                {
-                    //IV qd
-                    transform.position = new Vector3(SafeZoneLimit, transform.position.y, -SafeZoneLimit);
-                }
-            }
-            else
-            {
-                if (transform.position.z > 0)
-                {
-                    //II qd
-                    transform.position = new Vector3(-SafeZoneLimit, transform.position.y, SafeZoneLimit);
-                }
-                else
-                {
-                    //III qd
-                    transform.position = new Vector3(-SafeZoneLimit, transform.position.y, -SafeZoneLimit);
-                }
-            }
-        }
-        public void RotateToCamera()
-        {
-            Vector3 targetPostition = new Vector3(Camera.main.transform.position.x,
-                                       this.transform.position.y,
-                                       Camera.main.transform.position.z);
-            this.transform.LookAt(targetPostition);
-        }
-        bool checkBoundary()
-        {
-            if (Mathf.Abs(transform.position.x) < limit_X && Mathf.Abs(transform.position.z) < limit_Z)
-                return true;
-            else
-                return false;
-        }
+
+        #region Position and Direction Estimation
         private void PositionEstimation()
         {
             Vector3 heading = refPlayerTrans.position - transform.position;
@@ -170,19 +132,8 @@ namespace ARExample
         IEnumerator resetCheckTurn(float delay)
         {
             yield return new WaitForSeconds(delay);
-           CheckTurn = true;
-
+            CheckTurn = true;
         }
-        public void SetModelControllerState(bool state,Transform refPTrans)
-        {
-            isActive = state;
-            refPlayerTrans = refPTrans;
-        }
-        public void SetModelControllerState(bool state)
-        {
-            isActive = state;
-        }
-
         void CheckDirection()
         {
             var targetRelative = transform.InverseTransformPoint(refPlayerTrans.transform.position);
@@ -190,7 +141,7 @@ namespace ARExample
             if (targetRelative.x > 2.5)
             {
                 myAnimator.SetFloat("BlendX", .75f);
-                Debug.Log(targetRelative.x+"Right");
+                Debug.Log(targetRelative.x + "Right");
             }
             else if (targetRelative.x < -2.5)
             {
@@ -202,6 +153,82 @@ namespace ARExample
                 isTurn = false;
                 myAnimator.SetFloat("BlendX", 0f);
             }
+        }
+        float AngleDir(Vector3 fwd, Vector3 targetDir, Vector3 up)
+        {
+            Vector3 perp = Vector3.Cross(fwd, targetDir);
+            float dir = Vector3.Dot(perp, up);
+
+            if (dir > 0f)
+            {
+                return 1f;
+            }
+            else if (dir < 0f)
+            {
+                return -1f;
+            }
+            else
+            {
+                return 0f;
+            }
+        }
+        /// <summary>
+        ///  Reset position of model in case if it reaches to boundary
+        /// </summary>
+        void resetPosition()
+        {
+            if (transform.position.x > 0) // Ist or IV qd, 
+            {
+                if (transform.position.z > 0)
+                {
+                    //Ist qd
+                    transform.position = new Vector3(SafeZoneLimit, transform.position.y, SafeZoneLimit);
+                }
+                else
+                {
+                    //IV qd
+                    transform.position = new Vector3(SafeZoneLimit, transform.position.y, -SafeZoneLimit);
+                }
+            }
+            else
+            {
+                if (transform.position.z > 0)
+                {
+                    //II qd
+                    transform.position = new Vector3(-SafeZoneLimit, transform.position.y, SafeZoneLimit);
+                }
+                else
+                {
+                    //III qd
+                    transform.position = new Vector3(-SafeZoneLimit, transform.position.y, -SafeZoneLimit);
+                }
+            }
+        }
+        #endregion
+        public void RotateToCamera()
+        {
+            Vector3 targetPostition = new Vector3(Camera.main.transform.position.x,
+                                       this.transform.position.y,
+                                       Camera.main.transform.position.z);
+            this.transform.LookAt(targetPostition);
+        }
+        bool checkBoundary()
+        {
+            if (Mathf.Abs(transform.position.x) < limit_X && Mathf.Abs(transform.position.z) < limit_Z)
+                return true;
+            else
+                return false;
+        }
+        
+        public void SetModelControllerState(bool state,Transform refPTrans)
+        {
+            isActive = state;
+            refPlayerTrans = refPTrans;
+        }
+        #region Proximity Calculations
+        public void SetModelControllerState(bool state)
+        {
+            isActive = state;
         }
 
         void invokeOnSafeRegion()
@@ -216,7 +243,6 @@ namespace ARExample
                 isFollow = true;
                 myAnimator.SetFloat("BlendY", 1f);
                 myAnimator.SetBool("isRest", false);
-
             }
         }
         private void invokeOnUnFollow()
@@ -237,6 +263,7 @@ namespace ARExample
                 StartCoroutine(resetFlag(getRandomDelay(getCurrentAnimLength()), "isAttack"));
             }
         }
+        #endregion
 
         float getRandomDelay(float bufferDelay)
         {
@@ -271,83 +298,47 @@ namespace ARExample
 
         }
 
-        float AngleDir(Vector3 fwd, Vector3 targetDir, Vector3 up)
-        {
-            Vector3 perp = Vector3.Cross(fwd, targetDir);
-            float dir = Vector3.Dot(perp, up);
-
-            if (dir > 0f)
-            {
-                return 1f;
-            }
-            else if (dir < 0f)
-            {
-                return -1f;
-            }
-            else
-            {
-                return 0f;
-            }
-        }
+        #region OSC Animation Controll
 
         public void OnReceiveAction_Auto()
         {
-                myAnimator.SetBool("isAuto", true);
-                myAnimator.StopPlayback();
-                myAnimator.Play("state1", -1, 0);
+            setState("state1", true);
         }
         public void OnReceiveState_1()
         {
-
-                myAnimator.SetBool("isAuto", false);
-                myAnimator.StopPlayback();
-                myAnimator.Play("state1", -1, 0);
-
+            setState("state1", false);
         }
 
         public void OnReceiveState_2()
         {
-
-                myAnimator.SetBool("isAuto", false);
-
-                myAnimator.StopPlayback();
-                osc_stateStreamOutlet.streamStateEnd();
-                myAnimator.Play("state2", -1, 0);
-
+            setState("state2", false);
         }
 
         public void OnReceiveState_3()
         {
-
-                myAnimator.SetBool("isAuto", false);
-
-                myAnimator.StopPlayback();
-                osc_stateStreamOutlet.streamStateEnd();
-                myAnimator.Play("state3", -1, 0);
-            
+            setState("state3", false);
         }
 
         public void OnReceiveState_4()
         {
-
-                myAnimator.SetBool("isAuto", false);
-
-                myAnimator.StopPlayback();
-                osc_stateStreamOutlet.streamStateEnd();
-                myAnimator.Play("state4", -1, 0);
-           
+            setState("state4", false);
         }
 
         public void OnReceiveState_5()
         {
-
-                myAnimator.SetBool("isAuto", false);
-
-                myAnimator.StopPlayback();
-                osc_stateStreamOutlet.streamStateEnd();
-                myAnimator.Play("state5", -1, 0);
-
+            setState("state5", false);
         }
+
+        void setState(string myState , bool autoState)
+        {
+            myAnimator.SetBool("isAuto", autoState);
+
+            myAnimator.StopPlayback();
+            osc_stateStreamOutlet.streamStateEnd();
+            myAnimator.Play(myState, -1, 0);
+        }
+
+        #endregion
 
     }
 }

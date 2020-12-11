@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace ARExample
 {
+    /// <summary>
+    /// Proximity Controller for model which should ahve behaviour of attack and safe zone i.e Wolf
+    /// </summary>
     public class ProximityController : MonoBehaviour
     {
         Transform playerTrans;
