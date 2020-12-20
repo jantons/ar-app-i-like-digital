@@ -10,7 +10,6 @@ namespace ARExample
         void Start()
         {
             arManager = ARManager.Instance;
-
         }
 
         #region UI Call Fucntions

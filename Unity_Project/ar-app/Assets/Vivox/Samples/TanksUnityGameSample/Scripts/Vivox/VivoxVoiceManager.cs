@@ -64,13 +64,13 @@ public class VivoxVoiceManager : MonoBehaviour
         }
     }
     [SerializeField]
-    private string _server = "https://GETFROMPORTAL.www.vivox.com/api2";
+    private string _server = "https://mt1s.www.vivox.com/api2";
     [SerializeField]
-    private string _domain = "GET VALUE FROM VIVOX DEVELOPER PORTAL";
+    private string _domain = "mt1s.vivox.com";
     [SerializeField]
-    private string _tokenIssuer = "GET VALUE FROM VIVOX DEVELOPER PORTAL";
+    private string _tokenIssuer = "danish1730-ar53-dev";
     [SerializeField]
-    private string _tokenKey = "GET VALUE FROM VIVOX DEVELOPER PORTAL";
+    private string _tokenKey = "just655";
     private TimeSpan _tokenExpiration = TimeSpan.FromSeconds(90);
 
     private Client _client = new Client();

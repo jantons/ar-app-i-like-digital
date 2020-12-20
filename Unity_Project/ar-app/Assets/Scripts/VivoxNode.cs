@@ -21,17 +21,31 @@ public class VivoxNode : MonoBehaviour
         _client.Initialize();
         vivox.OnUserLoggedInEvent += LoggedIn;
         vivox.OnUserLoggedOutEvent += LogOut;
+
+        if (_userName.Equals("TxNode"))
+        {
+            if (vivox.LoginState == LoginState.LoggedIn)
+                GetComponent<TransmitterUI>().OnLoggedInUI();
+            else
+                GetComponent<TransmitterUI>().OnLoggedOutUI();
+        }
+        
     }
 
     private void LoggedIn()
     {
+        if (_userName.Equals("TxNode"))
+        {
+            GetComponent<TransmitterUI>().OnLoggedInUI();
+        }
         Debug.Log(vivox.LoginSession.LoginSessionId.DisplayName);
         JoinChannel();
     }
 
     void Start()
     {
-        LogIn();
+        if(_userName.Equals("RxNode"))
+            LogIn();
     }
 
     void init_Client()
@@ -47,6 +61,10 @@ public class VivoxNode : MonoBehaviour
 
     public void LogOut()
     {
+        if (_userName.Equals("TxNode"))
+        {
+            GetComponent<TransmitterUI>().OnLoggedOutUI();
+        }
         vivox.DisconnectAllChannels();
         if (vivox.LoginState == LoginState.LoggedIn)
             vivox.Logout();
