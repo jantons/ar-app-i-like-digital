@@ -18,7 +18,6 @@ public class OSC_Send : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(this);
         }
         
     }

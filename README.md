@@ -89,7 +89,19 @@ In order to receive messages don't forget to refresh listening to the ports 8000
 
 This application also has narrative mode which requires two phones running with unity application and one has to select receiver and other has to select sender mode after opening the application than communication channel will be open till application life cycle or till narrator don’t leave the channel. For this purpose, VIVOX plugin has been used. 
 
-## VIVOX Environment Varriables
+## 3d Audio
+
+For Doppler and 3D sound effect following configurations are used
+
+Volume Intensity 0.65
+Spatial Blend  = 3D
+Reverb Zone Mix 1
+Doppler Level 1
+Volume Rolloff = Linear Rolloff
+Min distance 0.25 units
+Max Distance 3.25 units
+
+## VIVOX Environment Variables
 
 API End-Point https://mt1s.www.vivox.com/api2
 Domain mt1s.vivox.com

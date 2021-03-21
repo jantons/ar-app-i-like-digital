@@ -73,7 +73,7 @@ namespace ARExample
             yield return new WaitForSeconds(delay);
             proximitySensor = true;
             playerTrans = refPlayerTrans;
-            gameObject.GetComponent<ModelController>().SetModelControllerState(true, playerTrans);
+            GetComponent<ModelController>().SetModelControllerState(true, playerTrans);
         }
     }
 }

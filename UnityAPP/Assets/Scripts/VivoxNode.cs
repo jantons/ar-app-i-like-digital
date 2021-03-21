@@ -13,7 +13,9 @@ public class VivoxNode : MonoBehaviour
    [SerializeField] string _userName = "RxNode";
     string _channelName = "ARAPP";
 
-    void Awake()
+    public bool LoginStatus() { if (vivox.LoginState == LoginState.LoggedIn) return true; else return false; }
+
+void Awake()
     {
         Instance = this;
         if (!Application.HasUserAuthorization(UserAuthorization.Microphone))
@@ -34,6 +36,7 @@ public class VivoxNode : MonoBehaviour
         
     }
 
+
     private void LoggedIn()
     {
         if (_userName.Equals("TxNode"))
@@ -53,8 +56,10 @@ public class VivoxNode : MonoBehaviour
 
     void Start()
     {
+      
+
         // if(_userName.Equals("RxNode"))
-           // LogIn();
+        // LogIn();
     }
 
     void init_Client()

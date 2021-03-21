@@ -63,10 +63,13 @@ namespace ARExample
         {
             if (isActive)
             {
+                if (SelfReposition)
+                {
                     if (!checkBoundary())
                     {
                         setModelIdle();
                     }
+                }
                 stram_OSC_Messages();
             }
         }
@@ -75,9 +78,6 @@ namespace ARExample
             // Stream Position
             osc_OutletStreamingController.StreamMessage("/locationX/", transform.position.x);
             osc_OutletStreamingController.StreamMessage("/locationZ/", transform.position.z);
-
-            // osc_OutletStreamingController.StreamMessage("/PhonelocationX/", _arManager.Player.transform.position.x);
-            // osc_OutletStreamingController.StreamMessage("/PhonelocationZ/", _arManager.Player.transform.position.z);
             osc_OutletStreamingController.StreamMessage("/PhonelocationX/", Camera.main.transform.position.x);
             osc_OutletStreamingController.StreamMessage("/PhonelocationZ/", Camera.main.transform.position.z);
             osc_OutletStreamingController.StreamMessage("/PhoneRotationX/", Camera.main.transform.rotation.x);
@@ -97,8 +97,6 @@ namespace ARExample
             RotateToCamera();
                 myAnimator.Play("RestState", -1, 0);
         }
-
-
         #region Position and Direction Estimation
         private void PositionEstimation()
         {

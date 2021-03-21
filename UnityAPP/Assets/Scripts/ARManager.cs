@@ -106,7 +106,6 @@ namespace ARExample
             else
             {
                 Instance = this;
-                DontDestroyOnLoad(this);
             }
             playerObj = GameObject.FindGameObjectWithTag("Player");
         }

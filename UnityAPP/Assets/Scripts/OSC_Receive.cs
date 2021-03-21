@@ -20,7 +20,6 @@ public class OSC_Receive:MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(this);
         }
         osc = gameObject.GetComponent<OSC>();
 

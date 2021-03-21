@@ -11,7 +11,6 @@ public class OSC_Adapter : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(this);
         }
 
     }

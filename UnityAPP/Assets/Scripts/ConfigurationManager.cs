@@ -14,6 +14,7 @@ namespace ARExample
         #region UI
         [SerializeField] Button Transmitter_BTN;
         [SerializeField] Button Receiver_BTN;
+        [SerializeField] Button BackSignout_BTN;
         [SerializeField] Button callibrate_Btn;
         [SerializeField] Button save_floorlevel_Btn;
         [SerializeField] Button saveCallibration_Btn;
@@ -93,6 +94,7 @@ namespace ARExample
             rabit_Btn.onClick.AddListener(() => modelToUse(Model.Rabit));
             Transmitter_BTN.onClick.AddListener(() => onTrasmitterMode());
             Receiver_BTN.onClick.AddListener(() => onReciverMode());
+            BackSignout_BTN.onClick.AddListener(() => GoBack());
         }
         void onReciverMode()
         {
@@ -104,6 +106,20 @@ namespace ARExample
         {
             // Load Scene
             SceneManager.LoadScene("scene_Transmitter");
+        }
+        void GoBack()
+        {
+            StartCoroutine(Signout_Back());
+        }
+        IEnumerator Signout_Back()
+        {
+            VivoxNode.Instance.LogOut();
+            while (VivoxNode.Instance.LoginStatus() == true)
+            {
+                yield return null;
+            }
+            Menu.SetActive(true);
+            ConfigurationUI.SetActive(false);
         }
         void FetchData()
         {

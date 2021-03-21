@@ -17,7 +17,6 @@ namespace ARExample
             else
             {
                 instance = this;
-                DontDestroyOnLoad(this);
             }
         }
 
