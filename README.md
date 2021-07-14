@@ -87,7 +87,7 @@ In order to receive messages don't forget to refresh listening to the ports 8000
 
 ## Narrator Voice
 
-This application also has narrative mode which requires two phones running with unity application and one has to select receiver and other has to select sender mode after opening the application than communication channel will be open till application life cycle or till narrator don’t leave the channel. For this purpose, VIVOX plugin has been used. 
+This application also has narrative mode which requires two phones running with unity application and one has to select receiver and other has to select sender mode after opening the application than communication channel will be open till application life cycle or till narrator don√ït leave the channel. For this purpose, VIVOX plugin has been used. 
 
 ## 3d Audio
 
@@ -107,3 +107,8 @@ API End-Point https://mt1s.www.vivox.com/api2
 Domain mt1s.vivox.com
 Issuer danish1730-ar53-dev
 Secret Key just655
+
+## Technology / Architecture Detials
+
+More details for architecture and setup can be found here
+https://github.com/jantons/ar-app-i-like-digital/wiki/Application-Technology
