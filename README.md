@@ -104,9 +104,6 @@ Max Distance 3.25 units
 ## VIVOX Environment Variables
 
 API End-Point https://mt1s.www.vivox.com/api2
-Domain mt1s.vivox.com
-Issuer danish1730-ar53-dev
-Secret Key just655
 
 ## Technology / Architecture Detials
 
